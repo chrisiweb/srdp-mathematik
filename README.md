@@ -1,11 +1,10 @@
-__________________________________
 
-                The
-          srdp-mathematik package
-               v1.8
+#                The
+#          srdp-mathematik package
+#               v1.8
+#
+#            2021/03/18
 
-            2021/03/18
-___________________________________
 
 Maintainer: Christoph Weberndorfer
 E-mail    : c.weberndorfer@gmail.com
