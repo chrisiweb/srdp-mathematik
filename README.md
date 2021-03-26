@@ -1,4 +1,4 @@
-# srdp-mathematik
+# srdp-mathematik.sty
 __________________________________
 
                 The
