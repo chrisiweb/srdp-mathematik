@@ -9,10 +9,6 @@ __________________________________
 ___________________________________
 
 Maintainer: Christoph Weberndorfer
-
-E-mail    : c.weberndorfer@gmail.com
-
-            Comments, bug reports and suggestions are welcome.
             
 Licence   : Released under the LaTeX Project Public License 1.3c or
             later, see http://www.latex-project.org/lppl.txt
