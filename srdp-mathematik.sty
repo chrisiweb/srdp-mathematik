@@ -326,7 +326,7 @@
 \footnotesize\renewcommand{\arraystretch}{1}
 \begin{center}
 \begin{tabular}{|C{3cm}C{3cm}C{3cm}C{3cm}C{3cm}|} \hline
-\ifthenelse{\equal{#1}{prozent}}{%
+\ifthenelse{\equal{#2}{prozent}}{%
 Erreichte Punkte & Prozent & Gesamt & \multicolumn{2}{c|}{Note} \\
 && \multirow{2}{*}{\thepunkte} && \\%
 }{%
@@ -334,7 +334,7 @@ Erreichte Punkte &Gesamt&\multicolumn{2}{c}{Note}& \\
 &\multirow{2}{*}{\thepunkte} &&& \\}
 &&&& \\ \hline \hline
 \ifthenelse{\equal{#3}{nms}}{}{\scriptsize{Sehr gut}} & \ifthenelse{\equal{#3}{nms}}{}{\scriptsize{Gut}} & \scriptsize{Befriedigend} & \scriptsize{Gen\"ugend} & \scriptsize{Nicht gen\"ugend} \\
-\ifthenelse{\equal{#3}{nms}}{}{\scriptsize{\thepunkte ~ - \ifdim\gut pt=\gutgenau pt \gut\else\gutpluseins\fi}}& \ifthenelse{\equal{#3}{nms}}{}{\scriptsize{\ifdim\gut pt=\gutgenau pt \gutminuseins\else\gut\fi \ifthenelse{\equal{#2}{1/2}}{,5}{} ~ - \ifdim\befriedigend pt=\befriedigendgenau pt \befriedigend\else\befriedigendpluseins\fi}} & \scriptsize{\ifdim\befriedigend pt=\befriedigendgenau pt \befriedigendminuseins\else\befriedigend\fi \ifthenelse{\equal{#2}{1/2}}{,5}{} ~ - \ifdim\genuegend pt=\genuegendgenau pt \genuegend\else\genuegendpluseins\fi} & \scriptsize{\ifdim\genuegend pt=\genuegendgenau pt \genuegendminuseins\else\genuegend\fi \ifthenelse{\equal{#2}{1/2}}{,5}{} ~ - \ifdim\nichtgenuegend pt=\nichtgenuegendgenau pt \nichtgenuegend\else\nichtgenuegendpluseins\fi} & \scriptsize{unter \ifdim\nichtgenuegend pt=\nichtgenuegendgenau pt \nichtgenuegend\else\nichtgenuegendpluseins\fi} \\ \hline
+\ifthenelse{\equal{#3}{nms}}{}{\scriptsize{\thepunkte ~ - \ifdim\gut pt=\gutgenau pt \gut\else\gutpluseins\fi}}& \ifthenelse{\equal{#3}{nms}}{}{\scriptsize{\ifdim\gut pt=\gutgenau pt \gutminuseins\else\gut\fi \ifthenelse{\equal{#1}{1/2}}{,5}{} ~ - \ifdim\befriedigend pt=\befriedigendgenau pt \befriedigend\else\befriedigendpluseins\fi}} & \scriptsize{\ifdim\befriedigend pt=\befriedigendgenau pt \befriedigendminuseins\else\befriedigend\fi \ifthenelse{\equal{#1}{1/2}}{,5}{} ~ - \ifdim\genuegend pt=\genuegendgenau pt \genuegend\else\genuegendpluseins\fi} & \scriptsize{\ifdim\genuegend pt=\genuegendgenau pt \genuegendminuseins\else\genuegend\fi \ifthenelse{\equal{#1}{1/2}}{,5}{} ~ - \ifdim\nichtgenuegend pt=\nichtgenuegendgenau pt \nichtgenuegend\else\nichtgenuegendpluseins\fi} & \scriptsize{unter \ifdim\nichtgenuegend pt=\nichtgenuegendgenau pt \nichtgenuegend\else\nichtgenuegendpluseins\fi} \\ \hline
 \end{tabular}
 \end{center}\STautoround{}\normalsize}
 
