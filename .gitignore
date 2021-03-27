@@ -1,3 +1,6 @@
+*.pdf
+!srdp-mathematik.pdf
+
 *.aux
 *.lof
 *.log
