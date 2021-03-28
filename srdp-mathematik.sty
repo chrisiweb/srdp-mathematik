@@ -311,7 +311,7 @@
 %
 % 
 
-\NewDocumentCommand{\notenschluesselnew}{ O{} O{} O{}  m m m m}{
+\NewDocumentCommand{\notenschluessel}{ O{} O{} O{}  m m m m}{
 \null\vfill
 \STautoround{3}\renewcommand{\arraystretch}{0}\tiny
 \begin{spreadtab}[\STsavecell\gutgenau{b2} \STsavecell\befriedigendgenau{c2} \STsavecell\genuegendgenau{d2} \STsavecell\nichtgenuegendgenau{e2} 
@@ -338,74 +338,9 @@ Erreichte Punkte &Gesamt&\multicolumn{2}{c}{Note}& \\
 \end{tabular}
 \end{center}\STautoround{}\normalsize}
 
-\newcommand{\notenschluessel}[5][]{
-\vfill
-\STautoround{3}\renewcommand{\arraystretch}{0}\tiny
-\begin{spreadtab}[\STsavecell\gutgenau{b2} \STsavecell\befriedigendgenau{c2} \STsavecell\genuegendgenau{d2} \STsavecell\nichtgenuegendgenau{e2} 
-\STsavecell\gut{b3}  \STsavecell\befriedigend{c3} \STsavecell\genuegend{d3} \STsavecell\nichtgenuegend{e3}  
-\STsavecell\gutpluseins{b4} \STsavecell\befriedigendpluseins{c4}  \STsavecell\genuegendpluseins{d4} \STsavecell\nichtgenuegendpluseins{e4} \STsavecell\gutminuseins{b5} \STsavecell\befriedigendminuseins{c5} \STsavecell\genuegendminuseins{d5} \STsavecell\nichtgenuegendminuseins{e5}]{{tabular}{ccccc}}
- \SThidecol\thepunkte &\SThidecol 1 &\SThidecol2 &\SThidecol 3 &\SThidecol 4 \\ 
- & a1*#2 &a1*#3 & a1*#4 & a1*#5 \\
- &trunc(a1*#2,0) & trunc(a1*#3,0) &trunc(a1*#4,0) &trunc(a1*#5,0) \\
- &b3+1 &c3+1 &d3+1 & e3+1\\
- &b3-1 &c3-1 &d3-1 & e3-1\\
-\end{spreadtab}
-\footnotesize\renewcommand{\arraystretch}{1}
-\begin{center}
-\begin{tabular}{|C{3cm}C{3cm}C{3cm}C{3cm}C{3cm}|} \hline
-Erreichte Punkte & Prozent & Gesamt & \multicolumn{2}{c|}{Note} \\
-&& \multirow{2}{*}{\thepunkte} && \\  
-&&&& \\ \hline \hline
-\scriptsize{Sehr gut} & \scriptsize{Gut} & \scriptsize{Befriedigend} & \scriptsize{Gen\"ugend} & \scriptsize{Nicht gen\"ugend} \\
-\scriptsize{\thepunkte ~ - \ifdim\gut pt=\gutgenau pt \gut\else\gutpluseins\fi}& \scriptsize{\ifdim\gut pt=\gutgenau pt \gutminuseins\else\gut\fi \ifthenelse{\equal{#1}{1/2}}{,5}{} ~ - \ifdim\befriedigend pt=\befriedigendgenau pt \befriedigend\else\befriedigendpluseins\fi} & \scriptsize{\ifdim\befriedigend pt=\befriedigendgenau pt \befriedigendminuseins\else\befriedigend\fi \ifthenelse{\equal{#1}{1/2}}{,5}{} ~ - \ifdim\genuegend pt=\genuegendgenau pt \genuegend\else\genuegendpluseins\fi} & \scriptsize{\ifdim\genuegend pt=\genuegendgenau pt \genuegendminuseins\else\genuegend\fi \ifthenelse{\equal{#1}{1/2}}{,5}{} ~ - \ifdim\nichtgenuegend pt=\nichtgenuegendgenau pt \nichtgenuegend\else\nichtgenuegendpluseins\fi} & \scriptsize{unter \ifdim\nichtgenuegend pt=\nichtgenuegendgenau pt \nichtgenuegend\else\nichtgenuegendpluseins\fi} \\ \hline
-\end{tabular}
-\end{center}\STautoround{}\normalsize}
-
-\newcommand{\notenschluesselop}[5][]{
-\vfill
-\STautoround{3}\renewcommand{\arraystretch}{0}\tiny
-\begin{spreadtab}[\STsavecell\gutgenau{b2} \STsavecell\befriedigendgenau{c2} \STsavecell\genuegendgenau{d2} \STsavecell\nichtgenuegendgenau{e2} 
-\STsavecell\gut{b3}  \STsavecell\befriedigend{c3} \STsavecell\genuegend{d3} \STsavecell\nichtgenuegend{e3}  
-\STsavecell\gutpluseins{b4} \STsavecell\befriedigendpluseins{c4}  \STsavecell\genuegendpluseins{d4} \STsavecell\gutminuseins{b5} \STsavecell\befriedigendminuseins{c5} \STsavecell\genuegendminuseins{d5}]{{tabular}{ccccc}}
- \SThidecol \thepunkte &\SThidecol 1 &\SThidecol 2 &\SThidecol 3 &\SThidecol 4 \\ 
- & a1*#2 &a1*#3 & a1*#4 & a1*#5 \\
- &trunc(a1*#2,0) & trunc(a1*#3,0) &trunc(a1*#4,0) &trunc(a1*#5,0) \\
- &b3+1 &c3+1 &d3+1 & e3+1\\
- &b3-1 &c3-1 &d3-1 & e3-1\\
-\end{spreadtab}
-\footnotesize\renewcommand{\arraystretch}{1}
-\begin{center}
-\begin{tabular}{|C{3cm}C{3cm}C{3cm}C{3cm}C{3cm}|} \hline
-Erreichte Punkte &Gesamt&\multicolumn{2}{c}{Note}& \\
-&\multirow{2}{*}{\thepunkte} &&& \\  
-&&&& \\ \hline \hline
-\scriptsize{Sehr gut} & \scriptsize{Gut} & \scriptsize{Befriedigend} & \scriptsize{Gen\"ugend} & \scriptsize{Nicht gen\"ugend} \\
-\scriptsize{\thepunkte ~ - \ifdim\gut pt=\gutgenau pt \gut\else\gutpluseins\fi}& \scriptsize{\ifdim\gut pt=\gutgenau pt \gutminuseins\else\gut\fi \ifthenelse{\equal{#1}{1/2}}{,5}{} ~ - \ifdim\befriedigend pt=\befriedigendgenau pt \befriedigend\else\befriedigendpluseins\fi} & \scriptsize{\ifdim\befriedigend pt=\befriedigendgenau pt \befriedigendminuseins\else\befriedigend\fi \ifthenelse{\equal{#1}{1/2}}{,5}{} ~ - \ifdim\genuegend pt=\genuegendgenau pt \genuegend\else\genuegendpluseins\fi} & \scriptsize{\ifdim\genuegend pt=\genuegendgenau pt \genuegendminuseins\else\genuegend\fi \ifthenelse{\equal{#1}{1/2}}{,5}{} ~ - \ifdim\nichtgenuegend pt=\nichtgenuegendgenau pt \nichtgenuegend\else\nichtgenuegendpluseins\fi} & \scriptsize{unter \ifdim\nichtgenuegend pt=\nichtgenuegendgenau pt \nichtgenuegend\else\nichtgenuegendpluseins\fi} \\ \hline
-\end{tabular}
-\end{center}\STautoround{}\normalsize}
-
-
-\newcommand{\notenschluesselopStandard}[4]{
-\STautoround{3}\renewcommand{\arraystretch}{0}\tiny
-\begin{spreadtab}[\STsavecell\gutgenau{b2} \STsavecell\befriedigendgenau{c2} \STsavecell\genuegendgenau{d2}
-\STsavecell\gut{b3}  \STsavecell\befriedigend{c3} \STsavecell\genuegend{d3} \STsavecell\nichtgenuegend{e3}  
-\STsavecell\gutpluseins{b4} \STsavecell\befriedigendpluseins{c4}  \STsavecell\genuegendpluseins{d4} \STsavecell\gutminuseins{b5} \STsavecell\befriedigendminuseins{c5} \STsavecell\genuegendminuseins{d5}]{{tabular}{ccccc}}
- \SThidecol \thepunkte &\SThidecol 1 &\SThidecol 2 &\SThidecol 3 &\SThidecol 4 \\ 
- & a1*#1 &a1*#2 & a1*#3 & a1*#4 \\
- &trunc(a1*#1,0) & trunc(a1*#2,0) &trunc(a1*#3,0) &trunc(a1*#4,0) \\
- &b3+1 &c3+1 &d3+1 &\\
- &b3-1 &c3-1 &d3-1 &\\
-\end{spreadtab}
-\footnotesize\renewcommand{\arraystretch}{1}
-\begin{center}
-\begin{tabular}{|C{3cm}C{3cm}C{3cm}C{3cm}C{3cm}|} \hline
-	Erreichte Punkte &Gesamt&\multicolumn{2}{c}{Note}& \\
-	&\multirow{2}{*}{\thepunkte} &&& \\  
-	&&&& \\ \hline \hline
-	& & \scriptsize{Befriedigend} & \scriptsize{Gen\"ugend} & \scriptsize{Nicht gen\"ugend} \\
-	& & \scriptsize{\ifdim\befriedigend pt=\befriedigendgenau pt \befriedigendminuseins\else\befriedigend\fi ~ - \ifdim\genuegend pt=\genuegendgenau pt \genuegend\else\genuegendpluseins\fi} & \scriptsize{\ifdim\genuegend pt=\genuegendgenau pt \genuegendminuseins\else\genuegend\fi ~ - \nichtgenuegend} & \scriptsize{unter \nichtgenuegend} \\ \hline
-\end{tabular}
-\end{center}\STautoround{}\normalsize}
+% for legacy reason
+\newcommand{\notenschluesselop}[5][1]{\notenschluessel[#1]{#2}{#3}{#4}{#5}} 
+%%%%%%%%%%%%%%%%%
 
 %
 %%%%%%%%%%%%%%%%%% GAP DEFINITION
