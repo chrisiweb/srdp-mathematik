@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="no"?>
+<lxCollection version="1" xmlns:txclxp="http://schemas.ToolsCenter.org/TeXnicCenter/LaTeXCommands.xsd">
+  <lxPackage name="srdp-mathematik"
+		path=""
+		desc="Schularbeitsformate"
+	>
+
+<lxEnvironment name="langesbeispiel"
+        parameters="2"
+        desc="Defines a long Beispiel-environment (page-break)"
+        icon="format.bmp"
+        index="6"
+        expafter="} \item[0] %PUNKTE DES BEISPIELS
+				
+\end{langesbeispiel}"
+        expbefore="\begin{"/>
+
+<lxEnvironment name="beispiel"
+        parameters="2"
+        desc="Defines a Beispiel-environment"
+        icon="format.bmp"
+        index="6"
+        expafter="}{0} %PUNKTE DES BEISPIELS
+				
+\end{beispiel}"
+        expbefore="\begin{"/>
+
+	
+		
+		
+		<lxEnvironment name="\multiplechoice"
+        parameters="1"
+        desc="Defines a comment for a multiple choice question"
+        icon="format.bmp"
+        index="6"
+        expafter="[5]{  %Anzahl der Antwortmoeglichkeiten, Standard: 5
+				L1={},   %1. Antwortmoeglichkeit 
+				L2={},   %2. Antwortmoeglichkeit
+				L3={},   %3. Antwortmoeglichkeit
+				L4={},   %4. Antwortmoeglichkeit
+				L5={},	 %5. Antwortmoeglichkeit
+				L6={},	 %6. Antwortmoeglichkeit
+				L7={},	 %7. Antwortmoeglichkeit
+				L8={},	 %8. Antwortmoeglichkeit
+				L9={},	 %9. Antwortmoeglichkeit
+				%% LOESUNG: %%
+				A1=0,  % 1. Antwort
+				A2=0,	 % 2. Antwort
+				A3=0,  % 3. Antwort
+				A4=0,  % 4. Antwort
+				A5=0,  % 5. Antwort
+				}"
+        expbefore=""/>
+				
+			<lxEnvironment name="\rfmultiplechoice"
+        parameters="1"
+        desc="Defines a comment for a multiple choice question"
+        icon="format.bmp"
+        index="6"
+        expafter="[5]{Aussage}{  %Anzahl der Antwortmoeglichkeiten, Standard: 5
+				L1={},   %1. Antwortmoeglichkeit 
+				L2={},   %2. Antwortmoeglichkeit
+				L3={},   %3. Antwortmoeglichkeit
+				L4={},   %4. Antwortmoeglichkeit
+				L5={},	 %5. Antwortmoeglichkeit
+				L6={},	 %6. Antwortmoeglichkeit
+				L7={},	 %7. Antwortmoeglichkeit
+				L8={},	 %8. Antwortmoeglichkeit
+				L9={},	 %9. Antwortmoeglichkeit
+				%% LOESUNG: %%
+				A1=0,  % 1. Antwort
+				A2=0,	 % 2. Antwort
+				A3=0,  % 3. Antwort
+				A4=0,  % 4. Antwort
+				A5=0,  % 5. Antwort
+				}"
+        expbefore=""/>
+				
+						<lxEnvironment name="\tfmultiplechoice"
+        parameters="1"
+        desc="Defines a comment for a multiple choice question"
+        icon="format.bmp"
+        index="6"
+        expafter="[5]{Statement}{  %Anzahl der Antwortmoeglichkeiten, Standard: 5
+				L1={},   %1. Antwortmoeglichkeit 
+				L2={},   %2. Antwortmoeglichkeit
+				L3={},   %3. Antwortmoeglichkeit
+				L4={},   %4. Antwortmoeglichkeit
+				L5={},	 %5. Antwortmoeglichkeit
+				L6={},	 %6. Antwortmoeglichkeit
+				L7={},	 %7. Antwortmoeglichkeit
+				L8={},	 %8. Antwortmoeglichkeit
+				L9={},	 %9. Antwortmoeglichkeit
+				%% LOESUNG: %%
+				A1=0,  % 1. Antwort
+				A2=0,	 % 2. Antwort
+				A3=0,  % 3. Antwort
+				A4=0,  % 4. Antwort
+				A5=0,  % 5. Antwort
+				}"
+        expbefore=""/>				
+    
+		<lxEnvironment name="\lueckentext"
+        parameters="1"
+        desc="Defines a comment for a text with gaps"
+        icon="format.bmp"
+        index="6"
+        expafter="{
+				text={}, 	%Lueckentext Luecke=\gap
+				L1={}, 		%1.Moeglichkeit links  
+				L2={}, 		%2.Moeglichkeit links
+				L3={}, 		%3.Moeglichkeit links
+				R1={}, 		%1.Moeglichkeit rechts 
+				R2={}, 		%2.Moeglichkeit rechts
+				R3={}, 		%3.Moeglichkeit rechts
+				%% LOESUNG: %%
+				A1=0,   % Antwort links
+				A2=0		% Antwort rechts 
+				}"
+        expbefore=""/>
+    
+			<lxEnvironment name="\zuordnen"
+        parameters="1"
+        desc="Defines a comment for an order exercise"
+        icon="format.bmp"
+        index="6"
+        expafter="{
+				R1={},				% Response 1
+				R2={},				% Response 2
+				R3={},				% Response 3
+				R4={},				% Response 4
+				%% Moegliche Zuordnungen: %%
+				A={}, 				%Moeglichkeit A  
+				B={}, 				%Moeglichkeit B  
+				C={}, 				%Moeglichkeit C  
+				D={}, 				%Moeglichkeit D  
+				E={}, 				%Moeglichkeit E  
+				F={}, 				%Moeglichkeit F  
+				%% LOESUNG: %%
+				A1={},				% 1. richtige Zuordnung
+				A2={},				% 2. richtige Zuordnung
+				A3={},				% 3. richtige Zuordnung
+				A4={},				% 4. richtige Zuordnung
+				}"
+        expbefore=""/>
+	
+	
+	<lxEnvironment name="\beurteilungsraster"
+        parameters="1"
+        desc="Defines a comment for the grades"
+        icon="format.bmp"
+        index="6"
+        expafter="{0.875}{0.708}{0.5}{1/3}{ % Prozentschluessel
+				T1={24}, 				% Punkte im Teil 1  
+				AP={4}, 				% Ausgleichspunkte aus Teil 2  
+				T2={20}, 				% Punkte im Teil 2
+				}"
+        expbefore=""/>
+	
+	
+		<lxEnvironment name="\notenschluessel"
+        parameters="1"
+        desc="Defines a comment for the grades"
+        icon="format.bmp"
+        index="6"
+        expafter="{0.91}{0.8}{0.64}{0.5}"
+        expbefore=""/>
+		
+		
+	<lxEnvironment name="\winkelfunktion"
+        parameters="0"
+        desc="Defines a comment for the grades"
+        icon="format.bmp"
+        index="6"
+        expafter="	\psset{xunit=1.0cm,yunit=1.0cm,trigLabels,algebraic=true,dimen=middle,dotstyle=o,dotsize=5pt 0,linewidth=0.8pt,arrowsize=3pt 2,arrowinset=0.25}
+\begin{pspicture*}(-4.5,-4.5)(4.5,4.5)
+\multips(0,-4)(0,1.0){10}{\psline[linestyle=dashed,linecap=1,dash=1.5pt 1.5pt,linewidth=0.4pt,linecolor=black!60]{c-c}(-10,0)(10,0)}
+\multips(-8,0)(1,0){20}{\psline[linestyle=dashed,linecap=1,dash=1.5pt 1.5pt,linewidth=0.4pt,linecolor=black!60]{c-c}(0,-5)(0,5)}
+\psaxes[labelFontSize=\scriptstyle,trigLabelBase=2,xAxis=true,yAxis=true,Dx=1,Dy=1.,ticksize=-2pt 0,subticks=2]{->}(0,0)(-10,-8)(4.5,4.5)[x,140] [y,-40]
+\psplot[xunit=0.63661977cm,linewidth=1.2pt,plotpoints=200]{-10}{20}{SIN(x)}
+\begin{scriptsize}
+\rput[bl](-1.5882409839303135,-1.2899119647047494){$f$}
+\end{scriptsize}
+\end{pspicture*}"
+        expbefore=""/>	
+		
+<lxEnvironment name="\kreisdiagramm"
+        parameters="0"
+        desc="Defines a comment for the grades"
+        icon="format.bmp"
+        index="6"
+        expafter="\begin{tikzpicture}
+\pie[color={black!10 ,black!20 , black!30, black!40}, %Farbe
+text=pin %Format: inside,pin, legend
+]
+{10/Beschriftung 1 , 20/Beschriftung 2 , 30/Beschriftung 3 , 40/Beschriftung 4} %Werte
+\end{tikzpicture}"
+        expbefore=""/>
+	
+		
+<lxEnvironment name="\includegraphics[width=1\textwidth]{Titel.eps}"
+        parameters="0"
+        desc="Defines a comment to insert an image"
+        icon="format.bmp"
+        index="6"
+        expafter=""
+        expbefore=""/>		
+		
+		<lxEnvironment name="\meinbild"
+        parameters="1"
+        desc="Defines a title with picture"
+        icon="format.bmp"
+        index="6"
+        expafter="{}{\includegraphics[width=1\textwidth]{}}"
+        expbefore=""/>
+		
+		<lxCommand name="\header" desc="Inserts a defined header for the Matura" parameters="2" />
+		<lxCommand name="\antwort" desc="Splits the page in half" parameters="1" />
+		<lxCommand name="\meinlr" desc="Splits the page in half" parameters="2" />	
+		<lxCommand name="\meinlcr" desc="Splits the page in three parts" parameters="3" />
+	    <lxCommand name="\paragraph" desc="Paragraph" parameters="1" />
+<lxCommand name="\heft" desc="creates a box around the text" parameters="1" />	
+<lxCommand name="\Vek" desc="Defines a Vector-command" parameters="3" />
+<lxCommand name="\textvek" desc="Defines a smaller Vector-command" parameters="3" />
+<lxCommand name="\dfrac" desc="Defines a display-fraction" parameters="2" />
+
+<lxCommand name="\resizebox{0.5\linewidth}{!}" desc="Change size of Geogebra-input" parameters="1" />
+
+
+  </lxPackage>
+</lxCollection>
