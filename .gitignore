@@ -12,6 +12,8 @@
 *.fot
 *.cb
 *.cb2
+*.ps
+*.synctex.gz
 .*.lb
 
 *.dvi
