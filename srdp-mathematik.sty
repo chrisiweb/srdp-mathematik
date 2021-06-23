@@ -180,13 +180,16 @@
 
 
 \end{minipage} 
-\begin{minipage}[t]{0.1\textwidth} \raggedleft \small{\_\_\_/#2}\addtocounter{punkte}{#2}\\
-\antwort{\footnotesize #1 \normalsize}\end{minipage}
+\begin{minipage}[t]{0.1\textwidth} \raggedleft \small{\_\_\_/#2\addtocounter{punkte}{#2}\\\ifthenelse{\equal{#1}{\string 1/2}}
+	{$\left[{}^1{\mskip -5mu/\mskip -3mu}_2\right]$}
+	{\antwort{\footnotesize #1 \normalsize}}}
+\end{minipage}
 \vspace{\baselineskip}
 
 }
 
 
+\newcommand{\pkte}[2][]{\hfill[0\,/\,\ifthenelse{\equal{#1}{\string 1/2}}{${}^1{\mskip -5mu/\mskip -3mu}_2$\,/\,}{}#2]}
 
 %
 %
