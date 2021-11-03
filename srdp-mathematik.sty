@@ -174,10 +174,8 @@
 
 \NewEnviron{beispiel}[2][\unskip]{\begin{minipage}[t]{0.88\textwidth}
 \addtocounter{number}{1}
-\begin{enumerate}
-	\item[\thenumber.] \BODY
-\end{enumerate}
 
+\setlength\parindent{0.8\baselineskip}\thenumber.\,~\BODY
 
 \end{minipage} 
 \begin{minipage}[t]{0.1\textwidth} \raggedleft \small{\_\_\_/#2\addtocounter{punkte}{#2}\\\ifthenelse{\equal{#1}{\string 1/2}}
