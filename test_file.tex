@@ -7,42 +7,55 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[ngerman]{babel}
+\usepackage{tabularray}
 \usepackage[solution_on, random=0]{srdp-mathematik} % solution_on/off, random
 
 \pagestyle{plain} %PAGESTYLE: empty, plain
-\onehalfspacing %Zeilenabstand
+%\onehalfspacing %Zeilenabstand
 \setcounter{secnumdepth}{-1} % keine Nummerierung der Überschriften
-\usepackage{blindtext}
 %
-%
+%1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%% DOKUMENT - ANFANG %%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %
 
-
-
 \begin{document}
-\begin{beispiel}[1/2]{1} %PUNKTE DES BEISPIELS
-dasdlk
-\end{beispiel}
+\multiplechoice[5]{  %Anzahl der Antwortmoeglichkeiten, Standard: 5
+				L1={test 1t},   %1. Antwortmoeglichkeit 
+				L2={test 2},   %2. Antwortmoeglichkeit
+				L3={test 3},   %3. Antwortmoeglichkeit
+				L4={test 4},   %4. Antwortmoeglichkeit
+				L5={test 5},	 %5. Antwortmoeglichkeit
+				L6={},	 %6. Antwortmoeglichkeit
+				L7={},	 %7. Antwortmoeglichkeit
+				L8={},	 %8. Antwortmoeglichkeit
+				L9={},	 %9. Antwortmoeglichkeit
+				%% LOESUNG: %%
+				A1=1,  % 1. Antwort
+				A2=0,	 % 2. Antwort
+				A3=0,  % 3. Antwort
+				A4=0,  % 4. Antwort
+				A5=0,  % 5. Antwort
+				}
 
 
-\begin{langesbeispiel} \item[0] %PUNKTE DES BEISPIELS
-
-\begin{aufgabenstellung}
-\item  Lea trinkt eine Tasse Kaffee. In der nachstehenden Abbildung ist der Graph der Funktion K dargestellt, die modellhaft die Konzentration K(t) von Koffein in Leas Blut in Abhängigkeit von
-der Zeit t nach dem Trinken des Kaffees beschreibt (t in h, K(t) in mg/L).
-
-\Subitem{Ermitteln Sie mithilfe der obigen Abbildung, wie viele Minuten nach dem Trinken des Kaffees
-die maximale Konzentration von Koffein im Blut auftritt.} \pkte[1/2]{1}
-
-
-\end{aufgabenstellung}
-
-
-
-\end{langesbeispiel}
-
+\tfmultiplechoice[5]{Statement}{  %Anzahl der Antwortmoeglichkeiten, Standard: 5
+						L1={das},   %1. Antwortmoeglichkeit 
+						L2={ist},   %2. Antwortmoeglichkeit
+						L3={ein},   %3. Antwortmoeglichkeit
+						L4={test},   %4. Antwortmoeglichkeit
+						L5={wirklich},	 %5. Antwortmoeglichkeit
+						L6={},	 %6. Antwortmoeglichkeit
+						L7={},	 %7. Antwortmoeglichkeit
+						L8={},	 %8. Antwortmoeglichkeit
+						L9={},	 %9. Antwortmoeglichkeit
+						%% LOESUNG: %%
+						A1=0,  % 1. Antwort
+						A2=0,	 % 2. Antwort
+						A3=0,  % 3. Antwort
+						A4=0,  % 4. Antwort
+						A5=0,  % 5. Antwort
+						}
 \end{document}
