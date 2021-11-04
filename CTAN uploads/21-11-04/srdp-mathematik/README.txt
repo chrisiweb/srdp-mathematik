@@ -4,7 +4,7 @@ __________________________________
           srdp-mathematik package
                v1.9.1
 
-            2021/11/03
+            2021/11/04
 ___________________________________
 
 Maintainer: Christoph Weberndorfer
