@@ -10,11 +10,11 @@
 \usepackage[utf8]{inputenc}
 \usepackage[ngerman]{babel}
 \usepackage[solution_on, random=0, info_off]{srdp-mathematik} % solution_on/off, random, info_on/off
-
-
-\pagestyle{plain} %PAGESTYLE: empty, plain
-\onehalfspacing %Zeilenabstand
-\setcounter{secnumdepth}{-1} % keine Nummerierung der Überschriften
+%
+%
+%\pagestyle{plain} %PAGESTYLE: empty, plain
+%\onehalfspacing %Zeilenabstand
+%\setcounter{secnumdepth}{-1} % keine Nummerierung der Überschriften
 %
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -23,11 +23,41 @@
 %
 %
 
+%\NewEnviron{test}{
+%	\begin{enumerate}
+%		\item {\BODY}
+%	\end{enumerate}
+%}
+
 \begin{document}
+%\begin{test}
+%Written text
+%
+%\begin{center}
+%dasd
+%\end{center}
+%
+%\end{test}
+
+\begin{beispiel}{0} %PUNKTE DES BEISPIELS
+dasdas
+
+\lueckentext{
+				text={das}, 	%Lueckentext Luecke=\gap
+				L1={•}, 		%1.Moeglichkeit links  
+				L2={•}, 		%2.Moeglichkeit links
+				L3={•}, 		%3.Moeglichkeit links
+				R1={•}, 		%1.Moeglichkeit rechts 
+				R2={•}, 		%2.Moeglichkeit rechts
+				R3={•}, 		%3.Moeglichkeit rechts
+				%% LOESUNG: %%
+				A1=0,   % Antwort links
+				A2=0		% Antwort rechts 
+				}
+\end{beispiel}
 
 \begin{beispiel}[AG 1.1]{0} %PUNKTE DES BEISPIELS
 Das ist ein Test
-
 \langmultiplechoice[5]{  %Anzahl der Antwortmoeglichkeiten, Standard: 5
 				L1={$\Vek{1}{3}{4} = \Vek{4}{4}{1} \cdot \Vek{2}{1}{x}$},   %1. Antwortmoeglichkeit 
 				L2={•},   %2. Antwortmoeglichkeit
@@ -45,6 +75,53 @@ Das ist ein Test
 				A4=0,  % 4. Antwort
 				A5=0,  % 5. Antwort
 				}
+\end{beispiel}
+
+\begin{beispiel}{0} %PUNKTE DES BEISPIELS
+dsadsdas
+
+\rfmultiplechoice[5]{Aussage}{  %Anzahl der Antwortmoeglichkeiten, Standard: 5
+				L1={dasd},   %1. Antwortmoeglichkeit 
+				L2={das},   %2. Antwortmoeglichkeit
+				L3={das},   %3. Antwortmoeglichkeit
+				L4={das},   %4. Antwortmoeglichkeit
+				L5={•},	 %5. Antwortmoeglichkeit
+				L6={},	 %6. Antwortmoeglichkeit
+				L7={},	 %7. Antwortmoeglichkeit
+				L8={},	 %8. Antwortmoeglichkeit
+				L9={},	 %9. Antwortmoeglichkeit
+				%% LOESUNG: %%
+				A1=0,  % 1. Antwort
+				A2=0,	 % 2. Antwort
+				A3=0,  % 3. Antwort
+				A4=0,  % 4. Antwort
+				A5=0,  % 5. Antwort
+				}
+\end{beispiel}
+
+\begin{beispiel}{0} %PUNKTE DES BEISPIELS
+Das ist ein Test
+
+\zuordnen{
+				R1={daskdl},				% Response 1
+				R2={daksöl},				% Response 2
+				R3={dakslö},				% Response 3
+				R4={daslö},				% Response 4
+				%% Moegliche Zuordnungen: %%
+				A={asdl}, 				%Moeglichkeit A  
+				B={dlas}, 				%Moeglichkeit B  
+				C={daslöd}, 				%Moeglichkeit C  
+				D={daslä}, 				%Moeglichkeit D  
+				E={daslä}, 				%Moeglichkeit E  
+				F={daslä}, 				%Moeglichkeit F  
+				%% LOESUNG: %%
+				A1={•},				% 1. richtige Zuordnung
+				A2={•},				% 2. richtige Zuordnung
+				A3={•},				% 3. richtige Zuordnung
+				A4={•},				% 4. richtige Zuordnung
+				}
+
+
 \end{beispiel}
 \end{document}
 
