@@ -169,6 +169,16 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcounter{number}
+\newcommand*\rfrac[2]{{}^{#1}\!/_{#2}}
+
+\makeatletter
+\def\addifisinteger#1{%
+  \sbox\z@{\@tempcnta=0#1\relax}%
+  \expandafter\ifdim\wd\z@>\z@\relax
+  {}\else
+  \addtocounter{punkte}{#1}\fi}
+\makeatother
+
 
 \makeatletter
 
@@ -180,17 +190,19 @@
 	
 	
 	\end{minipage} 
-	\begin{minipage}[t]{0.1\textwidth} \raggedleft \small{\_\_\_/#2\addtocounter{punkte}{#2}\\\ifthenelse{\equal{#1}{\string 1/2}}
-		{$\left[{}^1{\mskip -5mu/\mskip -3mu}_2\right]$}
-		{\antwort{\footnotesize #1 \normalsize}}}
+	\begin{minipage}[t]{0.11\textwidth} \raggedleft \small{\_\_\_/\ifthenelse{\equal{#1}{\string 1/2}}{\scriptsize$\rfrac{1}{2}$\small/}{}#2\addifisinteger{#2}\\
+		\ifthenelse{\equal{#1}{\string 1/2}}{}{\antwort{\footnotesize #1 \normalsize}}}
 	\end{minipage}
 	\vspace{\baselineskip}
 	
 	}
-
+% \scriptsize$\rfrac{1}{2}$\small
+%\ifthenelse{\equal{#1}{\string 1/2}}
+%{$\left[{}^1{\mskip -5mu/\mskip -3mu}_2\right]$}
 
 \newcommand{\pkte}[2][]{\hfill[0\,/\,\ifthenelse{\equal{#1}{\string 1/2}}{${}^1{\mskip -5mu/\mskip -3mu}_2$\,/\,}{}#2]}
 
+\newcommand{\defgesamtpunkte}[1]{\setcounter{punkte}{#1}}
 %
 %
 %
