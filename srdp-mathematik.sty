@@ -179,10 +179,19 @@
   \addtocounter{punkte}{#1}\fi}
 \makeatother
 
+\makeatletter
+\def\checkifinteger#1#2{%
+  \sbox\z@{\@tempcnta=0#1\relax}%
+  \expandafter\ifdim\wd\z@>\z@\relax
+  \scriptsize$\rfrac{#2}{2}$\small\else#1\fi}
+\makeatother
 
 \makeatletter
 
-\NewEnviron{beispiel}[2][\unskip]{\begin{minipage}[t]{0.88\textwidth}
+\NewEnviron{beispiel}[2][\unskip]{\renewcommand{\arraystretch}{0}\tiny%
+\begin{spreadtab}[\STsavecell\halbepunkte{a1} \STsavecell\halbepunktetrunc{b1}]{{tabular}{ccc}}\SThidecol#2/2&\SThidecol trunc(a1,0)\\\end{spreadtab}\normalsize\renewcommand{\arraystretch}{1}%
+
+\begin{minipage}[t]{0.88\textwidth}
 	\addtocounter{number}{1}
 	\begin{enumerate}
 		\item[\thenumber.] {\BODY}
@@ -190,7 +199,7 @@
 	
 	
 	\end{minipage} 
-	\begin{minipage}[t]{0.11\textwidth} \raggedleft \small{\_\_\_/\ifthenelse{\equal{#1}{\string 1/2}}{\scriptsize$\rfrac{1}{2}$\small/}{}#2\addifisinteger{#2}\\
+	\begin{minipage}[t]{0.11\textwidth} \raggedleft \small{\_\_\_/\ifthenelse{\equal{#1}{\string 1/2}}{\checkifinteger{\halbepunkte}{#2}/}{\ifthenelse{\equal{#1}{\string 1}}{1/}{}}#2\addifisinteger{#2}\\
 		\ifthenelse{\equal{#1}{\string 1/2}}{}{\antwort{\footnotesize #1 \normalsize}}}
 	\end{minipage}
 	\vspace{\baselineskip}
