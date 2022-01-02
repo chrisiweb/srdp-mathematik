@@ -190,14 +190,13 @@
 
 \NewEnviron{beispiel}[2][\unskip]{\renewcommand{\arraystretch}{0}\tiny%
 \begin{spreadtab}[\STsavecell\halbepunkte{a1} \STsavecell\halbepunktetrunc{b1}]{{tabular}{ccc}}\SThidecol#2/2&\SThidecol trunc(a1,0)\\\end{spreadtab}\normalsize\renewcommand{\arraystretch}{1}%
-
 \begin{minipage}[t]{0.88\textwidth}
 	\addtocounter{number}{1}
 	\begin{enumerate}
 		\item[\thenumber.] {\BODY}
-	\end{enumerate}
-	
-	
+	\end{enumerate}%
+	%
+	%
 	\end{minipage} 
 	\begin{minipage}[t]{0.11\textwidth} \raggedleft \small{\_\_\_/\ifthenelse{\equal{#1}{\string 1/2}}{\checkifinteger{\halbepunkte}{#2}/}{\ifthenelse{\equal{#1}{\string 1}}{1/}{}}#2\addifisinteger{#2}\\
 		\ifthenelse{\equal{#1}{\string 1/2}}{}{\antwort{\footnotesize #1 \normalsize}}}
