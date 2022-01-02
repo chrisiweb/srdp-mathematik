@@ -9,7 +9,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[ngerman]{babel}
-\usepackage[solution_on, random=0, info_off]{srdp-mathematik} % solution_on/off, random, info_on/off
+\usepackage[solution_off, random=0, info_off]{srdp-mathematik} % solution_on/off, random, info_on/off
 %
 \usepackage{blindtext}
 %
@@ -39,9 +39,38 @@
 %\end{center}
 %
 %\end{test}
+%\beurteilungsraster{0.85}{0.68}{0.5}{1/3}{ % Prozentschluessel
+%				T1={24}, 				% Punkte im Teil 1  
+%				AP={4}, 				% Ausgleichspunkte aus Teil 2  
+%				T2={20}, 				% Punkte im Teil 2
+%				}
+\begin{titlepage}
+%
+%\flushright
+%\begin{minipage}[t]{0.4\textwidth} \vspace{0pt}
+%\includegraphics[width=1\textwidth]{logo.eps}
+%\end{minipage} \\ \vfil 
+%\textsc{\Huge 1. Mathematikschularbeit}\\ [2cm] 
+%
+%\textsc{\Large am Montag, 29. Dezember 2021}\\ [1cm] 
+%
+%\textsc{\Large Klasse 5a} \\ [1cm] 
+%
+%\Large Name: \rule{8cm}{0.4pt} \\ 
+%
+%\Large \textsc{Viel Erfolg!}\\
+%\vfill
+%
+%\normalsize
+\vfill
+\beurteilung{0.875}{0.75}{0.61}{0.5}{ % Prozentschluessel
+				T1={32}, 				% Punkte im Teil 1  
+				T2={16}, 				% Punkte im Teil 2
+				}
+\end{titlepage}
 
-\begin{beispiel}{3} %PUNKTE DES BEISPIELS
-Kreuze an.
+\begin{beispiel}[1/2]{3} %PUNKTE DES BEISPIELS
+Kreuze an. \blindtext
 
 \multiplechoice[5]{  %Anzahl der Antwortmoeglichkeiten, Standard: 5
 				L1={daddad},   %1. Antwortmoeglichkeit 
@@ -62,7 +91,7 @@ Kreuze an.
 				}
 \end{beispiel}
 
-\begin{beispiel}{3} %PUNKTE DES BEISPIELS
+\begin{beispiel}[1/2]{1} %PUNKTE DES BEISPIELS
 Kreuze an.
 
 \multiplechoice[5]{  %Anzahl der Antwortmoeglichkeiten, Standard: 5
