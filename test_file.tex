@@ -9,7 +9,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[ngerman]{babel}
-\usepackage[solution_on, random=0, info_off]{srdp-mathematik} % solution_on/off, random, info_on/off
+\usepackage[solution_on, random=4, info_off]{srdp-mathematik} % solution_on/off, random, info_on/off
 %
 \usepackage{blindtext}
 %
@@ -31,39 +31,9 @@
 %}
 
 \begin{document}
-%\begin{test}
-%Written text
-%
-%\begin{center}
-%dasd
-%\end{center}
-%
-%\end{test}
 
-\begin{beispiel}{3} %PUNKTE DES BEISPIELS
-Kreuze an.
+\variation{A}{B}[C][D]
 
-\multiplechoice[5]{  %Anzahl der Antwortmoeglichkeiten, Standard: 5
-				L1={daddad},   %1. Antwortmoeglichkeit 
-				L2={dasd},   %2. Antwortmoeglichkeit
-				L3={dasd},   %3. Antwortmoeglichkeit
-				L4={dsdaa},   %4. Antwortmoeglichkeit
-				L5={dasq},	 %5. Antwortmoeglichkeit
-				L6={},	 %6. Antwortmoeglichkeit
-				L7={},	 %7. Antwortmoeglichkeit
-				L8={},	 %8. Antwortmoeglichkeit
-				L9={},	 %9. Antwortmoeglichkeit
-				%% LOESUNG: %%
-				A1=1,  % 1. Antwort
-				A2=3,	 % 2. Antwort
-				A3=5,  % 3. Antwort
-				A4=0,  % 4. Antwort
-				A5=0,  % 5. Antwort
-				}
-\end{beispiel}
-
-
-\notenschluessel[1/2]{0.91}{0.8}{0.64}{0.5}
 \end{document}
 
 
