@@ -135,7 +135,17 @@
 {\color[rgb]{0,0,1}#2}
 }{#1}}
 
+\newif\ifswitch
+\let\switchon\switchtrue
+\let\switchoff\switchfalse
 
+\ifthenelse{\theAntworten=1}{\switchon}{}
+
+\def\antwortzeile #1\\{%
+\ifswitch%
+{\color[rgb]{1,0,0}#1}\\
+\fi%
+}
 
 \newcounter{A1}
 \newcounter{A2}
