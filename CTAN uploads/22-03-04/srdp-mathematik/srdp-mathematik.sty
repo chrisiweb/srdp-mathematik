@@ -284,7 +284,7 @@
 \newcommand{\ASubitem}[1]{\Subitem{\fbox{A} #1}}
 \NewEnviron{aufgabenstellung}[1]{\let\itemalt\item
 \renewcommand*{\item}{\setcounter{subitemcounter}{0}\itemalt}
-\textbf{Aufgabenstellung:}%
+\subsubsection{Aufgabenstellung:}%
 \begin{enumerate}[a),leftmargin=0pt]
 \item {\BODY}
 \end{enumerate}%
@@ -516,84 +516,64 @@ Beurteilung: \rule{10.5cm}{0.4pt}
 \end{spreadtab}
 
 
+\small
+Die Schularbeit besteht aus Teil 1 (Grundkompetenzen) und Teil 2 (vernetzte und erweiterte Grundkompetenzen). In Teil 1 und Teil 2 sind jeweils \jeroen@get{T1} Punkte zu erreichen. \jeroen@get{AP} Punkte aus Teil 2 k\"onnen zum Ausgleich fehlender Grundkompetenzpunkte aus Teil 1 herangezogen werden. Diese sind in der Angabe mit \fbox{A} gekennzeichnet. 
 
-Die Schularbeit besteht aus Teil 1 (Grundkompetenzen) und Teil 2 (vernetzte und erweiterte Grundkompetenzen). In Teil 1 sind 32 und in Teil 2 sind 16 Punkte zu erreichen.\\ 
-Für eine positive Beurteilung gilt: mindestens 24 Punkte insgesamt!
+\tiny
+\STautoround{0}
+\begin{spreadtab}[\STsavecell\brzweigrenze{f1}  \STsavecell\gut{b2} \STsavecell\befriedigend{c2}  \STsavecell{\genuegend}{d2} \STsavecell{\nichtgenuegend}{e2} \STsavecell\brzweibefriedigend{f2} \STsavecell{\gutminuseins}{b3}  \STsavecell{\befriedigendminuseins}{c3} \STsavecell{\genuegendminuseins}{d3} \STsavecell\brzweigrenzeminuseins{e3} \STsavecell\brzweibefriedigendminuseins{f3}]{{tabular}{cccccc}}
+\SThidecol \gesamtpunkte & \SThidecol 1 &\SThidecol 2 & \SThidecol 3 &\SThidecol 4 & \SThidecol \gesamtpunkte*0.75\\ % \SThidecol 
+&a1*#1 &a1*#2 &a1*#3 &a1*#4 & \gesamtpunkte*0.6\\
+& b2-1 &c2-1 &d2-1 & f1-1 & f2-1\\ %\SThiderow
+\end{spreadtab}
+\small
 
+\textbf{Zwei Beurteilungswege}
 
-\leer
+\begin{enumerate}[1)]
+	\item Wenn mindestens \positiv~Punkte aus Teil 1, allenfalls unter Einbeziehung der Ausgleichspunkte aus \mbox{Teil 2} erreicht werden, gilt folgender Beurteilungsschlüssel:\vspace{0.3cm}
+
+\footnotesize
+\begin{tabular}{C{2.8cm}C{2.8cm}C{2.8cm}C{2.8cm}C{2.8cm}}
+\scriptsize{Sehr gut} & \scriptsize{Gut} & \scriptsize{Befriedigend} & \scriptsize{Gen\"ugend} & \scriptsize{Nicht gen\"ugend} \\
+\scriptsize{\gesamtpunkte ~-~ \gut} & \scriptsize{\gutminuseins,5 ~-~ \befriedigend} & \scriptsize{\befriedigendminuseins,5 ~-~ \genuegend} & \scriptsize{\genuegendminuseins,5 ~-~ \nichtgenuegend} & \scriptsize{unter \nichtgenuegend} \\
+\end{tabular}
+\STautoround{}\vspace{0.3cm}
+
+\small
+\item Wenn weniger als \positiv\ Punkte aus Teil 1, allenfalls unter Einbeziehung der Ausgleichspunkte aus \mbox{Teil 2} erreicht werden, dann kann auf diesem Weg ein \glqq Gen\"ugend\grqq\ oder \glqq Befriedigend\grqq\ erreicht werden: \vspace{0.3cm}
+
+\footnotesize
+\begin{tabular}{C{2.8cm}C{2.8cm}}
+\scriptsize{Befriedigend} & \scriptsize{Gen\"ugend} \\
+\scriptsize{\brzweigrenzeminuseins,5 ~-~ \brzweibefriedigend} & \scriptsize{\brzweibefriedigendminuseins,5 ~-~\genuegend}\\
+\end{tabular}
+\STautoround{} \vspace{0.3cm}
+
+\small
+Ab \brzweigrenze\ erreichten Punkten gilt der unter 1) angeführte Beurteilungsschlüssel.
+
+Die Arbeit wird mit \glqq Nicht genügend\grqq\ beurteilt, wenn im Teil 1 unter Berücksichtigung der \jeroen@get{AP} Ausgleichspunkte aus Teil 2 weniger als \nichtgenuegend\ Punkte und insgesamt weniger als \genuegend\ Punkte erreicht wurden. 
+
+\end{enumerate} \leer
+\vfil
 
 \renewcommand{\arraystretch}{1.5}
 \begin{center}
 \begin{tabular}{p{5cm}p{4cm}l}
 &Punkte&davon erreicht\\ \hline
-Teil 1&\jeroen@get{T1}&\\\hline
-Teil 2  &\jeroen@get{T2} &\\\hline
-& $\Sigma= \gesamtpunkte$ & \\\hline
+Teil 1&\jeroen@get{T1}&\\ \hline
+Teil 2: Ausgleichspunkte  & \jeroen@get{AP} &\\ \hline
+&Zwischensumme &\\ \hline
+Teil 2: sonstige Punkte  &\jeroen@get{T2} &\\ \hline
+& $\Sigma=\gesamtpunkte$ & \\ \hline
+Beurteilungsweg & \fbox{1} oder \fbox{2} \\ \hline
 \end{tabular}
-\vfil
+\vspace{1cm}
+
 Beurteilung: \rule{8cm}{0.4pt}
 \end{center}
 \renewcommand{\arraystretch}{1}
-
-% \small
-% Die Schularbeit besteht aus Teil 1 (Grundkompetenzen) und Teil 2 (vernetzte und erweiterte Grundkompetenzen). In Teil 1 und Teil 2 sind jeweils \jeroen@get{T1} Punkte zu erreichen. \jeroen@get{AP} Punkte aus Teil 2 k\"onnen zum Ausgleich fehlender Grundkompetenzpunkte aus Teil 1 herangezogen werden. Diese sind in der Angabe mit \fbox{A} gekennzeichnet. 
-
-% \tiny
-% \STautoround{0}
-% \begin{spreadtab}[\STsavecell\brzweigrenze{f1}  \STsavecell\gut{b2} \STsavecell\befriedigend{c2}  \STsavecell{\genuegend}{d2} \STsavecell{\nichtgenuegend}{e2} \STsavecell\brzweibefriedigend{f2} \STsavecell{\gutminuseins}{b3}  \STsavecell{\befriedigendminuseins}{c3} \STsavecell{\genuegendminuseins}{d3} \STsavecell\brzweigrenzeminuseins{e3} \STsavecell\brzweibefriedigendminuseins{f3}]{{tabular}{cccccc}}
-% \SThidecol \gesamtpunkte & \SThidecol 1 &\SThidecol 2 & \SThidecol 3 &\SThidecol 4 & \SThidecol \gesamtpunkte*0.75\\ % \SThidecol 
-% &a1*#1 &a1*#2 &a1*#3 &a1*#4 & \gesamtpunkte*0.6\\
-% & b2-1 &c2-1 &d2-1 & f1-1 & f2-1\\ %\SThiderow
-% \end{spreadtab}
-% \small
-
-% \textbf{Zwei Beurteilungswege}
-
-% \begin{enumerate}[1)]
-% 	\item Wenn mindestens \positiv~Punkte aus Teil 1, allenfalls unter Einbeziehung der Ausgleichspunkte aus \mbox{Teil 2} erreicht werden, gilt folgender Beurteilungsschlüssel:\vspace{0.3cm}
-
-% \footnotesize
-% \begin{tabular}{C{2.8cm}C{2.8cm}C{2.8cm}C{2.8cm}C{2.8cm}}
-% \scriptsize{Sehr gut} & \scriptsize{Gut} & \scriptsize{Befriedigend} & \scriptsize{Gen\"ugend} & \scriptsize{Nicht gen\"ugend} \\
-% \scriptsize{\gesamtpunkte ~-~ \gut} & \scriptsize{\gutminuseins,5 ~-~ \befriedigend} & \scriptsize{\befriedigendminuseins,5 ~-~ \genuegend} & \scriptsize{\genuegendminuseins,5 ~-~ \nichtgenuegend} & \scriptsize{unter \nichtgenuegend} \\
-% \end{tabular}
-% \STautoround{}\vspace{0.3cm}
-
-% \small
-% \item Wenn weniger als \positiv\ Punkte aus Teil 1, allenfalls unter Einbeziehung der Ausgleichspunkte aus \mbox{Teil 2} erreicht werden, dann kann auf diesem Weg ein \glqq Gen\"ugend\grqq\ oder \glqq Befriedigend\grqq\ erreicht werden: \vspace{0.3cm}
-
-% \footnotesize
-% \begin{tabular}{C{2.8cm}C{2.8cm}}
-% \scriptsize{Befriedigend} & \scriptsize{Gen\"ugend} \\
-% \scriptsize{\brzweigrenzeminuseins,5 ~-~ \brzweibefriedigend} & \scriptsize{\brzweibefriedigendminuseins,5 ~-~\genuegend}\\
-% \end{tabular}
-% \STautoround{} \vspace{0.3cm}
-
-% \small
-% Ab \brzweigrenze\ erreichten Punkten gilt der unter 1) angeführte Beurteilungsschlüssel.
-
-% Die Arbeit wird mit \glqq Nicht genügend\grqq\ beurteilt, wenn im Teil 1 unter Berücksichtigung der \jeroen@get{AP} Ausgleichspunkte aus Teil 2 weniger als \nichtgenuegend\ Punkte und insgesamt weniger als \genuegend\ Punkte erreicht wurden. 
-
-% \end{enumerate} \leer
-% \vfil
-
-% \renewcommand{\arraystretch}{1.5}
-% \begin{center}
-% \begin{tabular}{p{5cm}p{4cm}l}
-% &Punkte&davon erreicht\\ \hline
-% Teil 1&\jeroen@get{T1}&\\ \hline
-% Teil 2: Ausgleichspunkte  & \jeroen@get{AP} &\\ \hline
-% &Zwischensumme &\\ \hline
-% Teil 2: sonstige Punkte  &\jeroen@get{T2} &\\ \hline
-% & $\Sigma=\gesamtpunkte$ & \\ \hline
-% Beurteilungsweg & \fbox{1} oder \fbox{2} \\ \hline
-% \end{tabular}
-% \vspace{1cm}
-
-% Beurteilung: \rule{8cm}{0.4pt}
-% \end{center}
-% \renewcommand{\arraystretch}{1}
 \egroup
 }
 
