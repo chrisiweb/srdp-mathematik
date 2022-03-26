@@ -237,27 +237,22 @@ Die Option 3 \texttt{ms} ermöglicht die Darstellung des Notenschlüssels entspr
 
 \subsubsection{\texttt{\textbackslash beurteilungsraster}}
 
-Der Befehl \texttt{beurteilungsraster} entspricht der aktuellen Vorgabe der Beurteilung der standardisierten Reifeprüfung (Stand 2019). Dabei müssen die Punkte für Teil 1, Ausgleichspunkte und Teil 2 angegeben werden. Die in Klammer angegebenen Werte entsprechen der bei der Reifeprüfung verwendeten prozentuellen Notenverteilung, können jedoch jederzeit verändert werden. \leer  
+Der Befehl \texttt{beurteilungsraster} ist ein für Schularbeiten angepasstes Beurteilungsschema der standardisierten Reifeprüfung. Dabei müssen die Punkte für Teil 1 und Teil 2 angegeben werden. Die in Klammer angegebenen Werte entsprechen der empfohlenen prozentuellen Notenverteilung. Diese können jedoch jederzeit individuell angepasst werden. \leer  
 
 
 \textsc{Eingabe:}
 \begin{verbatim}
-\beurteilungsraster{0.85}{0.68}{0.5}{1/3}{ % Prozentschluessel
-				T1={24}, 				% Punkte im Teil 1  
-				AP={4}, 				% Ausgleichspunkte aus Teil 2  
-				T2={20}, 				% Punkte im Teil 2
+\beurteilungsraster{0.875}{0.75}{0.625}{0.5}{ % Prozentschluessel
+				T1={16}, 				% Punkte im Teil 1  
+				T2={8}, 				% Punkte im Teil 2
 				} 
 
 \end{verbatim}
 \textsc{Ausgabe:}\leer
 
-siehe nächste Seite \newpage
-
-
-\beurteilungsraster{0.85}{0.68}{0.5}{1/3}{ % Prozentschluessel
-				T1={24}, 				% Punkte im Teil 1  
-				AP={4}, 				% Ausgleichspunkte aus Teil 2  
-				T2={20}, 				% Punkte im Teil 2
+\beurteilungsraster{0.875}{0.75}{0.625}{1/2}{ % Prozentschluessel
+				T1={16}, 				% Punkte im Teil 1  
+				T2={8}, 				% Punkte im Teil 2
 				}
 
 \newpage

@@ -1,6 +1,4 @@
-*.pdf
-!srdp-mathematik.pdf
-
+!test_file.tex
 *.aux
 *.lof
 *.log
@@ -15,6 +13,5 @@
 *.ps
 *.synctex.gz
 .*.lb
-
 *.dvi
 *.xdv
