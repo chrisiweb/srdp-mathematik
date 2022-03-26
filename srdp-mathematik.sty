@@ -209,7 +209,6 @@
   \scriptsize$\rfrac{#2}{2}$\small\else#1\fi}
 \makeatother
 
-
 \NewEnviron{beispiel}[2][\unskip]{\FPeval{\halbepunkte}{clip(#2/2)}%
 	\begin{minipage}[t]{0.88\textwidth}
 	\addtocounter{number}{1}
@@ -285,7 +284,7 @@
 \newcommand{\ASubitem}[1]{\Subitem{\fbox{A} #1}}
 \NewEnviron{aufgabenstellung}[1]{\let\itemalt\item
 \renewcommand*{\item}{\setcounter{subitemcounter}{0}\itemalt}
-\textbf{Aufgabenstellung:}%
+\subsubsection{Aufgabenstellung:}%
 \begin{enumerate}[a),leftmargin=0pt]
 \item {\BODY}
 \end{enumerate}%
@@ -509,37 +508,16 @@ Beurteilung: \rule{10.5cm}{0.4pt}
 \bgroup
   \jeroen@set@keys{#5}
 \setcounter{teileins}{\jeroen@get{T1}}
+\setcounter{ausgleichspkte}{\jeroen@get{AP}}
 \setcounter{teilzwei}{\jeroen@get{T2}}
 \STautoround{0}
 \begin{spreadtab}[\STsavecell{\positiv}{b1} \STsavecell{\gesamtpunkte}{c1}]{{tabular}{ccc}}
- \SThiderow &(\theteileins+\theteilzwei)/2 & \theteileins+\theteilzwei \\
-\end{spreadtab}\normalsize
+ \SThiderow &\theteileins/3*2 & \theteileins+\theausgleichspkte+\theteilzwei \\
+\end{spreadtab}
 
 
-\begin{center}
-Die Schularbeit besteht aus Teil 1 (Grundkompetenzen) und Teil 2 (vernetzte und erweiterte Grundkompetenzen). In Teil 1 sind \jeroen@get{T1} und in Teil 2 sind \jeroen@get{T2} Punkte zu erreichen.\\
-
-Für eine positive Beurteilung müssen insgesamt mindestens \positiv\ Punkte erreicht werden!
-\end{center}\leer
-
-
-\renewcommand{\arraystretch}{1.5}
-\begin{center}
-\begin{tabular}{p{5cm}p{4cm}l}
-&Punkte&davon erreicht\\ \hline
-Teil 1&\jeroen@get{T1}&\\\hline
-Teil 2  &\jeroen@get{T2} &\\\hline
-& $\Sigma= \gesamtpunkte$ & \\\hline
-\end{tabular}
-\vspace{1.5cm}
-
-Beurteilung: \rule{8cm}{0.4pt}
-\end{center}
-\renewcommand{\arraystretch}{1}
-
-\vfill
-% \small
-% Die Schularbeit besteht aus Teil 1 (Grundkompetenzen) und Teil 2 (vernetzte und erweiterte Grundkompetenzen). In Teil 1 und Teil 2 sind jeweils \jeroen@get{T1} Punkte zu erreichen. \jeroen@get{AP} Punkte aus Teil 2 k\"onnen zum Ausgleich fehlender Grundkompetenzpunkte aus Teil 1 herangezogen werden. Diese sind in der Angabe mit \fbox{A} gekennzeichnet. 
+\small
+Die Schularbeit besteht aus Teil 1 (Grundkompetenzen) und Teil 2 (vernetzte und erweiterte Grundkompetenzen). In Teil 1 und Teil 2 sind jeweils \jeroen@get{T1} Punkte zu erreichen. \jeroen@get{AP} Punkte aus Teil 2 k\"onnen zum Ausgleich fehlender Grundkompetenzpunkte aus Teil 1 herangezogen werden. Diese sind in der Angabe mit \fbox{A} gekennzeichnet. 
 
 \tiny
 \STautoround{0}
@@ -548,11 +526,12 @@ Beurteilung: \rule{8cm}{0.4pt}
 &a1*#1 &a1*#2 &a1*#3 &a1*#4 & \gesamtpunkte*0.6\\
 & b2-1 &c2-1 &d2-1 & f1-1 & f2-1\\ %\SThiderow
 \end{spreadtab}
+\small
 
-% \textbf{Zwei Beurteilungswege}
+\textbf{Zwei Beurteilungswege}
 
-% \begin{enumerate}[1)]
-% 	\item Wenn mindestens \positiv~Punkte aus Teil 1, allenfalls unter Einbeziehung der Ausgleichspunkte aus \mbox{Teil 2} erreicht werden, gilt folgender Beurteilungsschlüssel:\vspace{0.3cm}
+\begin{enumerate}[1)]
+	\item Wenn mindestens \positiv~Punkte aus Teil 1, allenfalls unter Einbeziehung der Ausgleichspunkte aus \mbox{Teil 2} erreicht werden, gilt folgender Beurteilungsschlüssel:\vspace{0.3cm}
 
 \footnotesize
 \begin{tabular}{C{2.8cm}C{2.8cm}C{2.8cm}C{2.8cm}C{2.8cm}}
@@ -561,40 +540,40 @@ Beurteilung: \rule{8cm}{0.4pt}
 \end{tabular}
 \STautoround{}\vspace{0.3cm}
 
-% \small
-% \item Wenn weniger als \positiv\ Punkte aus Teil 1, allenfalls unter Einbeziehung der Ausgleichspunkte aus \mbox{Teil 2} erreicht werden, dann kann auf diesem Weg ein \glqq Gen\"ugend\grqq\ oder \glqq Befriedigend\grqq\ erreicht werden: \vspace{0.3cm}
+\small
+\item Wenn weniger als \positiv\ Punkte aus Teil 1, allenfalls unter Einbeziehung der Ausgleichspunkte aus \mbox{Teil 2} erreicht werden, dann kann auf diesem Weg ein \glqq Gen\"ugend\grqq\ oder \glqq Befriedigend\grqq\ erreicht werden: \vspace{0.3cm}
 
-% \footnotesize
-% \begin{tabular}{C{2.8cm}C{2.8cm}}
-% \scriptsize{Befriedigend} & \scriptsize{Gen\"ugend} \\
-% \scriptsize{\brzweigrenzeminuseins,5 ~-~ \brzweibefriedigend} & \scriptsize{\brzweibefriedigendminuseins,5 ~-~\genuegend}\\
-% \end{tabular}
-% \STautoround{} \vspace{0.3cm}
+\footnotesize
+\begin{tabular}{C{2.8cm}C{2.8cm}}
+\scriptsize{Befriedigend} & \scriptsize{Gen\"ugend} \\
+\scriptsize{\brzweigrenzeminuseins,5 ~-~ \brzweibefriedigend} & \scriptsize{\brzweibefriedigendminuseins,5 ~-~\genuegend}\\
+\end{tabular}
+\STautoround{} \vspace{0.3cm}
 
-% \small
-% Ab \brzweigrenze\ erreichten Punkten gilt der unter 1) angeführte Beurteilungsschlüssel.
+\small
+Ab \brzweigrenze\ erreichten Punkten gilt der unter 1) angeführte Beurteilungsschlüssel.
 
-% Die Arbeit wird mit \glqq Nicht genügend\grqq\ beurteilt, wenn im Teil 1 unter Berücksichtigung der \jeroen@get{AP} Ausgleichspunkte aus Teil 2 weniger als \nichtgenuegend\ Punkte und insgesamt weniger als \genuegend\ Punkte erreicht wurden. 
+Die Arbeit wird mit \glqq Nicht genügend\grqq\ beurteilt, wenn im Teil 1 unter Berücksichtigung der \jeroen@get{AP} Ausgleichspunkte aus Teil 2 weniger als \nichtgenuegend\ Punkte und insgesamt weniger als \genuegend\ Punkte erreicht wurden. 
 
-% \end{enumerate} \leer
-% \vfil
+\end{enumerate} \leer
+\vfil
 
-% \renewcommand{\arraystretch}{1.5}
-% \begin{center}
-% \begin{tabular}{p{5cm}p{4cm}l}
-% &Punkte&davon erreicht\\ \hline
-% Teil 1&\jeroen@get{T1}&\\ \hline
-% Teil 2: Ausgleichspunkte  & \jeroen@get{AP} &\\ \hline
-% &Zwischensumme &\\ \hline
-% Teil 2: sonstige Punkte  &\jeroen@get{T2} &\\ \hline
-% & $\Sigma=\gesamtpunkte$ & \\ \hline
-% Beurteilungsweg & \fbox{1} oder \fbox{2} \\ \hline
-% \end{tabular}
-% \vspace{1cm}
+\renewcommand{\arraystretch}{1.5}
+\begin{center}
+\begin{tabular}{p{5cm}p{4cm}l}
+&Punkte&davon erreicht\\ \hline
+Teil 1&\jeroen@get{T1}&\\ \hline
+Teil 2: Ausgleichspunkte  & \jeroen@get{AP} &\\ \hline
+&Zwischensumme &\\ \hline
+Teil 2: sonstige Punkte  &\jeroen@get{T2} &\\ \hline
+& $\Sigma=\gesamtpunkte$ & \\ \hline
+Beurteilungsweg & \fbox{1} oder \fbox{2} \\ \hline
+\end{tabular}
+\vspace{1cm}
 
-% Beurteilung: \rule{8cm}{0.4pt}
-% \end{center}
-% \renewcommand{\arraystretch}{1}
+Beurteilung: \rule{8cm}{0.4pt}
+\end{center}
+\renewcommand{\arraystretch}{1}
 \egroup
 }
 
