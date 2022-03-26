@@ -1,4 +1,5 @@
-!test_file.tex
+*.pdf
+!srdp-mathematik.pdf
 *.aux
 *.lof
 *.log
