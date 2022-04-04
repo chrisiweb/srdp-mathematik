@@ -24,64 +24,21 @@
 %
 %
 
-%\ExplSyntaxOn
-%\NewDocumentCommand {\splitargument} { m m }
-%{
-%    \clist_item:nn { #1 } { #2 }
-%}
-%\ExplSyntaxOff
-%
+%\def\rowswitch#1\\{#1\\} %On
+%%\def\rowswitch#1\\{} %Off
+
 \begin{document}
-\begin{titlepage}
-
-\flushright
-\begin{minipage}[t]{0.4\textwidth} \vspace{0pt}
-\includegraphics[width=1\textwidth]{logo.eps}
-\end{minipage} \\ [1cm] 
-\textsc{\Huge 1. Mathematikschularbeit}\\ [2cm] 
-
-\textsc{\Large am Freitag, 25. März 2022}\\ [1cm] 
-
-\textsc{\Large Klasse } \\ [1cm] 
-
-\Large Name: \rule{8cm}{0.4pt} \\ [2cm]
-
-\large
-\beurteilung{0.875}{0.75}{0.625}{1/2}{ % Prozentschluessel
-				T1={16}, 				% Punkte im Teil 1  
-				T2={8}, 				% Punkte im Teil 2
-				}
-
-\end{titlepage}
 
 
-%\normalsize
-%Die Schularbeit besteht aus Teil 1 (Grundkompetenzen) und Teil 2 (vernetzte und erweiterte Grundkompetenzen). In Teil 1 sind 32 und in Teil 2 sind 16 Punkte zu erreichen.\\ 
-%Für eine positive Beurteilung gilt: mindestens 24 Punkte insgesamt!
-%
-%
-%\leer
-%
-%\renewcommand{\arraystretch}{1.5}
-%\begin{center}
-%\begin{tabular}{p{5cm}p{4cm}l}
-%&Punkte&davon erreicht\\ \hline
-%Teil 1&32&\\\hline
-%Teil 2  &16 &\\\hline
-%& $\Sigma= 48$ & \\\hline
-%\end{tabular}
-%\vfil
-%Beurteilung: \rule{8cm}{0.4pt}
-%\end{center}
-%\renewcommand{\arraystretch}{1}
-
-%
-%\end{titlepage}
-%				
-				
-				
-dsalkdöask
-dlksaöd
+\begin{center}
+\begin{tabular}{c|c|cc}
+&&3&5\\
+&7&2&4\\
+&&2&8\\
+&4&3&6\\ \hline
+\antwortzeile 1&2&2&3 \\ \hline
+\end{tabular}
+\end{center}
 
 \end{document}
 
