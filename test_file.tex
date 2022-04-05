@@ -39,7 +39,6 @@
 %
 %\newcommand{\boxchar}[2]{\strut#2#1}
 %\newcommand{\stretchstring}[2][\ \ ]{\stringprocess{\boxchar{#1}}{#2}}
-\usepackage{collcell}
 
 \begin{document}
 
@@ -48,13 +47,12 @@
 Addiere die Zahlen zusammen!
 
 \begin{center}
-\large
-r\begin{tabular}{>{\collectcell\stretchstring}{r}<{\endcollectcell}}
-35\\
-724\\
-28\\
-436\\ \hline
-\antwortzeile 1223\\
+\begin{tabular}{r}
+\stretchstring{35}\\
+\stretchstring{724}\\
+\stretchstring{28}\\
+\stretchstring{436}\\ \hline
+\antwortzeile \stretchstring{1223}\\
 \end{tabular}
 \end{center}
 
