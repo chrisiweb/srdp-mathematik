@@ -26,19 +26,51 @@
 
 %\def\rowswitch#1\\{#1\\} %On
 %%\def\rowswitch#1\\{} %Off
+%\ExplSyntaxOn
+%\NewDocumentCommand{\stringprocess}{ m m }
+% {
+%  \egreg_string_process:nn { #1 } { #2 }
+% }
+%\cs_new_protected:Npn \egreg_string_process:nn #1 #2
+% {
+%  \tl_map_inline:nn { #2 } { #1 { ##1 } }
+% }
+%\ExplSyntaxOff
+%
+%\newcommand{\boxchar}[2]{\strut#2#1}
+%\newcommand{\stretchstring}[2][\ \ ]{\stringprocess{\boxchar{#1}}{#2}}
+\usepackage{collcell}
 
 \begin{document}
 
+\stretchstring[\quad]{1235}
+
+Addiere die Zahlen zusammen!
 
 \begin{center}
-\begin{tabu}{cccc}
+\large
+r\begin{tabular}{>{\collectcell\stretchstring}{r}<{\endcollectcell}}
+35\\
+724\\
+28\\
+436\\ \hline
+\antwortzeile 1223\\
+\end{tabular}
+\end{center}
+
+
+
+\begin{center}
+\begin{tabular}{cccc}
 &&3&5\\
 &7&2&4\\
 &&2&8\\
 &4&3&6\\ \hline
-\antwortzeile 1&2&2&3 \\
-\end{tabu}
+\antwortzeile 1&2&2&3\\
+\end{tabular}
 \end{center}
+
+\antwort{Themen: RNZ.as (1.)}
 
 \end{document}
 
