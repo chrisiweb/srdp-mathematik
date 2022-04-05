@@ -55,7 +55,7 @@ hidelinks
 
 \vfill
 
-\Huge The \textit{srdp-mathematik} package v1.9.5\\[1cm]
+\Huge The \textit{srdp-mathematik} package v1.9.6\\[1cm]
 
 Documentation \\ [1cm]
 
@@ -235,22 +235,22 @@ Die Option 3 \texttt{ms} ermöglicht die Darstellung des Notenschlüssels entspr
 %\textsc{Ausgabe:}
 %\notenschluessel[1/2]{0.91}{0.8}{0.64}{0.5}
 
-\subsubsection{\texttt{\textbackslash beurteilungsraster}}
+\subsubsection{\texttt{\textbackslash beurteilung}}
 
-Der Befehl \texttt{beurteilungsraster} ist ein für Schularbeiten angepasstes Beurteilungsschema der standardisierten Reifeprüfung. Dabei müssen die Punkte für Teil 1 und Teil 2 angegeben werden. Die in Klammer angegebenen Werte entsprechen der empfohlenen prozentuellen Notenverteilung. Diese können jedoch jederzeit individuell angepasst werden. \leer  
+Der Befehl \texttt{\textbackslash beurteilung} ist ein für Schularbeiten angepasstes Beurteilungsschema der standardisierten Reifeprüfung und ist für das Deckblatt der Schularbeit vorgesehen. Dabei müssen die Punkte für Teil 1 und Teil 2 angegeben werden. Die in Klammer angegebenen Werte entsprechen der empfohlenen prozentuellen Notenverteilung, die jedoch jederzeit individuell angepasst werden können. \leer  
 
 
 \textsc{Eingabe:}
 \begin{verbatim}
-\beurteilungsraster{0.875}{0.75}{0.625}{0.5}{ % Prozentschluessel
+\beurteilung{0.875}{0.75}{0.625}{1/2}{ % Prozentschluessel
 				T1={16}, 				% Punkte im Teil 1  
 				T2={8}, 				% Punkte im Teil 2
-				} 
+				}
 
 \end{verbatim}
 \textsc{Ausgabe:}\leer
 
-\beurteilungsraster{0.875}{0.75}{0.625}{1/2}{ % Prozentschluessel
+\beurteilung{0.875}{0.75}{0.625}{1/2}{ % Prozentschluessel
 				T1={16}, 				% Punkte im Teil 1  
 				T2={8}, 				% Punkte im Teil 2
 				}
@@ -306,6 +306,20 @@ wird.]
 \antwort[Optionale Eingabe, die nur angezeigt wird, wenn \texttt{'solution\_off'} gewählt wird.]
 {Dies ist die notwendige Eingabe und wird in rot angezeigt und nur wenn 
 \texttt{'solution\_on'} eingestellt ist.}
+
+\subsubsection{\texttt{\textbackslash antwortzeile}}
+In manchen Fällen ist es notwendig, dass ganze Zeilen einer Tabelle als Lösung ein- und ausgeblendet werden können. Zu diesem Zweck kann der Befehl \texttt{\textbackslash antwortzeile} verwendet werden.\leer
+
+\textsc{Eingabe:}
+
+\begin{verbatim}
+\begin{tabular}{c|c}
+$x$ & $f(x)$ \\ \hline
+0 & 2 \\
+2 & 4 \\
+\antwortzeile 4 & 16 \\
+\end{tabular}
+\end{verbatim}
 
 
 \subsection{Paketoption -- Erstellung von Gruppen: \texttt{[random=0,1,2,\ldots]}}
@@ -463,6 +477,47 @@ Der Winkel Alpha ist 30\degre. ($\alpha = 30 \degre$)
 
 Der Winkel Alpha ist 30\degre. ($\alpha = 30 \degre$)
 
+
+\subsubsection{\texttt{\textbackslash stretchstring}}
+Der Befehl \texttt{\textbackslash stretchstring} erleichtert es, einen Text (oder Zahlen) durch Leerzeichen zu trennen, um etwa Rechnungen auf Arbeitsblättern zum Ausfüllen zu erstellen.  
+
+\textsc{Eingabe:}
+\begin{verbatim}
+\begin{tabular}{r}
+\stretchstring{35}\\
+\stretchstring{724}\\
+\stretchstring{28}\\
+\stretchstring{436}\\ \hline
+\stretchstring{1223}\\
+\end{tabular}
+\end{verbatim}
+
+\textsc{Ausgabe:}\\
+\begin{tabular}{r}
+\stretchstring{35}\\
+\stretchstring{724}\\
+\stretchstring{28}\\
+\stretchstring{436}\\ \hline
+\stretchstring{1223}\\
+\end{tabular}\leer
+
+Es ist außerdem möglich, den Abstand zwischen den Zeichen individuell anzugeben.\leer
+
+\textsc{Eingabe:}
+\begin{verbatim}
+\stretchstring[\,]{4126}
+
+\stretchstring[\quad]{4126}
+
+\stretchstring[\hspace{2cm}]{4126}
+\end{verbatim}
+
+\textsc{Ausgabe:}\\
+\stretchstring[\,]{4126}
+
+\stretchstring[\quad]{4126}
+
+\stretchstring[\hspace{2cm}]{4126}
 
 \section{Typ-1-Aufgaben}
 
@@ -629,8 +684,6 @@ Wichtig zu erwähnen ist dabei, dass ausschließlich die Zahl in eckigen Klammer
 				A5=0,  % 5. Antwort
 				}
 				
-
-\newpage
 
 Die Eingabe in eckiger Klammer ist dabei optional. Wird sie nicht angegeben, wird der Standard von 5 angenommen. 
 

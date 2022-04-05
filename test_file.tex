@@ -24,22 +24,6 @@
 %
 %
 
-%\def\rowswitch#1\\{#1\\} %On
-%%\def\rowswitch#1\\{} %Off
-%\ExplSyntaxOn
-%\NewDocumentCommand{\stringprocess}{ m m }
-% {
-%  \egreg_string_process:nn { #1 } { #2 }
-% }
-%\cs_new_protected:Npn \egreg_string_process:nn #1 #2
-% {
-%  \tl_map_inline:nn { #2 } { #1 { ##1 } }
-% }
-%\ExplSyntaxOff
-%
-%\newcommand{\boxchar}[2]{\strut#2#1}
-%\newcommand{\stretchstring}[2][\ \ ]{\stringprocess{\boxchar{#1}}{#2}}
-
 \begin{document}
 
 \stretchstring[\quad]{1235}
@@ -67,6 +51,14 @@ Addiere die Zahlen zusammen!
 \antwortzeile 1&2&2&3\\
 \end{tabular}
 \end{center}
+
+\Large
+$\begin{array}{l}
+\enspace35 \cdot 41 \\ \hline
+140 \\
+\enspace\enspace35\\ \hline
+1435
+\end{array}$
 
 \antwort{Themen: RNZ.as (1.)}
 
