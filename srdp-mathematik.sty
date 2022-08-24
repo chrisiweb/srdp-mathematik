@@ -391,6 +391,24 @@ Erreichte Punkte &Gesamt&\multicolumn{2}{c}{Note}& \\
 \end{center}\STautoround{}\normalsize}
 
 
+\NewDocumentCommand{\individualnotenschluessel}{ O{} O{} m m m m m m m}{
+\null\vfill
+\footnotesize\renewcommand{\arraystretch}{1}
+\begin{center}
+\begin{tabular}{|C{3cm}C{3cm}C{3cm}C{3cm}C{3cm}|} \hline
+\ifthenelse{\equal{#2}{prozent}}{%
+Erreichte Punkte & Prozent & Gesamt & \multicolumn{2}{c|}{Note} \\
+&& \multirow{2}{*}{\ifthenelse{\equal{#1}{}}{\thepunkte}{#1}} && \\%
+}{%
+Erreichte Punkte &Gesamt&\multicolumn{2}{c}{Note}& \\
+&\multirow{2}{*}{\ifthenelse{\equal{#1}{}}{\thepunkte}{#1}} &&& \\}
+&&&& \\ \hline \hline
+\scriptsize{Sehr gut} & \scriptsize{Gut} & \scriptsize{Befriedigend} & \scriptsize{Gen\"ugend} & \scriptsize{Nicht gen\"ugend} \\
+\scriptsize{\ifthenelse{\equal{#1}{}}{\thepunkte}{#1} ~ - #3}& \scriptsize{#4 ~ - #5} & \scriptsize{#6 ~ - #7} & \scriptsize{#8 ~ - #9} & \scriptsize{unter #9} \\ \hline
+\end{tabular}
+\end{center}\normalsize}
+
+
 
 \NewDocumentCommand{\punkteverteilung}{ O{} O{} O{}  m m m m}{
 \null\vfill
