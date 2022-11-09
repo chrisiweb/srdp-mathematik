@@ -1,4 +1,4 @@
-# srdp-mathematik.sty v1.10.3
+# srdp-mathematik.sty v1.10.4
 
 This package provides basic commands for the defined formats of the Austrian sRDP in mathematics. 
 Furthermore, it includes ways to implement answers in the tex file, which can be voluntarily displayed in the pdf file and
