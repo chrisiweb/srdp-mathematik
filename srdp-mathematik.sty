@@ -243,19 +243,35 @@
 \newcounter{number}
 \newcommand*\rfrac[2]{{}^{#1}\!/_{#2}}
 
+
+\newcommand{\checkifnumber}[1]{%
+  \FPeval\result{clip(#1)}%
+  \ifx\result\empty
+    0
+  \else
+    1
+  \fi
+}
+
 \makeatletter
 \def\addifisinteger#1{%
   \sbox\z@{\@tempcnta=0#1\relax}%
   \expandafter\ifdim\wd\z@>\z@\relax
   {}\else
   \punkteAddieren{#1}\fi}
-\makeatother
 
-\makeatletter
 \def\checkifinteger#1#2{%
   \sbox\z@{\@tempcnta=0#1\relax}%
   \expandafter\ifdim\wd\z@>\z@\relax
   \scriptsize$\rfrac{#2}{2}$\small\else#1\fi}
+
+
+\def\dottocomma#1{%
+  \sbox\z@{\@tempcnta=0#1\relax}%
+  \expandafter\ifdim\wd\z@>\z@\relax
+  \begingroup\def\@tempa##1.##2\@nil{##1,\ifx\relax##2\relax\else##2\fi}%
+  \@tempa#1\@nil
+  \endgroup\else#1\fi}
 \makeatother
 
 \NewEnviron{beispiel}[2][\unskip]{\FPeval{\halbepunkte}{clip(#2/2)}%
