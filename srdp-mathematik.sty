@@ -129,6 +129,18 @@
 
 
 \ExplSyntaxOn
+\fp_new:N \punkte_total
+\fp_new:N \punkteTotal
+\NewDocumentCommand{\punkteAddieren}{m}{
+  \fp_gadd:Nn \punkteTotal {#1}
+}
+\NewDocumentCommand{\punkteReset}{}{
+  \fp_zero:N \punkteTotal 
+}
+\NewDocumentCommand{\punkteDisplay}{}{
+  \fp_to_decimal:N \punkteTotal
+}
+
 \NewDocumentCommand{\stringprocess}{ m m }
 {\egreg_string_process:nn{#1}{#2}}
 \cs_new_protected:Npn \egreg_string_process:nn#1#2
@@ -236,7 +248,7 @@
   \sbox\z@{\@tempcnta=0#1\relax}%
   \expandafter\ifdim\wd\z@>\z@\relax
   {}\else
-  \addtocounter{punkte}{#1}\fi}
+  \punkteAddieren{#1}\fi}
 \makeatother
 
 \makeatletter
@@ -255,7 +267,7 @@
 	
 	
 	\end{minipage} 
-	\begin{minipage}[t]{0.11\textwidth} \raggedleft \small{\_\_\_/\ifthenelse{\equal{#1}{\string 1/2}}{\checkifinteger{\halbepunkte}{#2}/}{\ifthenelse{\equal{#1}{\string 1}}{1/}{}}#2\addifisinteger{#2}\\
+	\begin{minipage}[t]{0.11\textwidth} \raggedleft \small{\_\_\_/\ifthenelse{\equal{#1}{\string 1/2}}{\checkifinteger{\halbepunkte}{#2}/}{\ifthenelse{\equal{#1}{\string 1}}{1/}{}}#2\punkteAddieren{#2}\\
 		\ifthenelse{\equal{#1}{\string 1/2}}{}{\antwort{\footnotesize #1 \normalsize}}}
 	\end{minipage}
 	\vspace{\baselineskip}

@@ -29,68 +29,19 @@
 \begin{document}
 
 
-\begin{beispiel}{4} %PUNKTE DES BEISPIELS
-Gib die Größe aller gesuchten Winkel an.
-\parallellines[40]{0.6}{0.7}
-
-\begin{center}
-\newrgbcolor{qqwuqq}{0. 0.39215686274509803 0.}
-\psset{xunit=1.0cm,yunit=1.0cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=5pt 0,linewidth=0.8pt,arrowsize=3pt 2,arrowinset=0.25}
-\begin{pspicture*}(-0.48,-1.)(11.02,6.7)
-\psplot[linewidth=0.8pt]{-0.48}{11.02}{(--17.022-0.16*x)/15.82}
-\psplot[linewidth=0.8pt]{-0.48}{11.02}{(--76.5184-0.16*x)/15.82}
-\psplot[linewidth=0.8pt]{-0.48}{11.02}{(-24.826--15.82*x)/0.16}
-\psplot[linewidth=0.8pt]{-0.48}{11.02}{(-2.8438220712910214--3.731711639725447*x)/2.879511622146401}
-\pscustom[linewidth=0.8pt,linecolor=qqwuqq,fillcolor=qqwuqq,fillstyle=solid,opacity=0.11]{
-\parametricplot{-0.010113435205161097}{0.913593281453572}{1*cos(t)+1.58|1*sin(t)+1.06}
-\lineto(1.58,1.06)\closepath}
-\psplot[linewidth=0.8pt]{-0.48}{11.02}{(-17.491701686789348--3.731711639725447*x)/2.879511622146401}
-\pscustom[linewidth=0.8pt,linecolor=qqwuqq,fillcolor=qqwuqq,fillstyle=solid,opacity=0.1]{
-\parametricplot{3.1314792183846323}{4.055185935043365}{1*cos(t)+4.459511622146401|1*sin(t)+4.791711639725447}
-\lineto(4.459511622146401,4.791711639725447)\closepath}
-\pscustom[linewidth=0.8pt,linecolor=qqwuqq,fillcolor=qqwuqq,fillstyle=solid,opacity=0.1]{
-\parametricplot{-2.227999372136221}{-0.010113435205160837}{0.6*cos(t)+4.459511622146401|0.6*sin(t)+4.791711639725447}
-\lineto(4.459511622146401,4.791711639725447)\closepath}
-\pscustom[linewidth=0.8pt,linecolor=qqwuqq,fillcolor=qqwuqq,fillstyle=solid,opacity=0.1]{
-\parametricplot{0.9135932814535722}{3.131479218384632}{0.6*cos(t)+8.354359974604424|0.6*sin(t)+4.752320000256845}
-\lineto(8.354359974604424,4.752320000256845)\closepath}
-\pscustom[linewidth=0.8pt,linecolor=qqwuqq,fillcolor=qqwuqq,fillstyle=solid,opacity=0.1]{
-\parametricplot{-2.227999372136221}{-0.010113435205160393}{0.6*cos(t)+8.354359974604424|0.6*sin(t)+4.752320000256845}
-\lineto(8.354359974604424,4.752320000256845)\closepath}
-%beta
-\pscustom[linewidth=0.8pt,linecolor=qqwuqq,fillcolor=qqwuqq,fillstyle=solid,opacity=0.1]{
-\parametricplot{-0.010113435205161095}{0.9135932814535717}{1*cos(t)+5.4748483524580225|1*sin(t)+1.020608360531398}
-\lineto(5.4748483524580225,1.020608360531398)\closepath}
-\pscustom[linewidth=0.8pt,linecolor=qqwuqq,fillcolor=qqwuqq,fillstyle=solid,opacity=0.1]{
-\parametricplot{0.9135932814535719}{1.5606828915897353}{cos(t)+1.58|sin(t)+1.06}
-\lineto(1.58,1.06)\closepath}
-%alpha
-\pscustom[linewidth=0.8pt,linecolor=qqwuqq,fillcolor=qqwuqq,fillstyle=solid,opacity=0.12]{
-\parametricplot{-1.5809097620000578}{-0.010113435205161725}{0.6*cos(t)+1.6180323614251815|0.6*sin(t)+4.82044973591479}
-\lineto(1.6180323614251815,4.82044973591479)\closepath}
-%50 degree
-\psellipse*[linewidth=0.8pt,linecolor=qqwuqq,fillcolor=qqwuqq,fillstyle=solid](1.8650627600570777,4.568371461959637)(0.05,0.05)
-
-\begin{scriptsize}
-\rput[bl](1.9,1.22){\qqwuqq{$50\textrm{\degre}$}}
-\rput[bl](3.8,4.34){\qqwuqq{$\mu$}}
-\rput[bl](4.5,4.5){\qqwuqq{$\varphi$}}
-\rput[bl](8.14,4.98){\qqwuqq{$\delta$}}
-\rput[bl](8.44,4.34){\qqwuqq{$\gamma$}}
-\rput[bl](5.9,1.1){\qqwuqq{$\beta$}}
-\rput[bl](1.7,1.5){\qqwuqq{$\alpha$}}
-\end{scriptsize}
-%\parallellines[40]{0.6}{0.7}
-%\parallellines[40]{3.1}{3.5}
-%\parallellines{0.25}{0}
-%\parallellines{4.05}{0}
-\end{pspicture*}
-\end{center}\leer
 
 
-$\alpha = \rule{2cm}{0.3pt}$  \hfill $\mu = \rule{2cm}{0.3pt}$ \hfill $\varphi = \rule{2cm}{0.3pt}$ \hfill $\beta = \rule{2cm}{0.3pt}$
+\punkteDisplay
 
+\punkteAddieren{5}
+
+\punkteDisplay
+\begin{beispiel}{3.5} %PUNKTE DES BEISPIELS
+test
 \end{beispiel}
+
+\punkteDisplay
+\notenschluessel[1/2]{0.91}{0.8}{0.64}{0.5}
 
 
 \end{document}
