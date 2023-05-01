@@ -55,7 +55,7 @@ hidelinks
 
 \vfill
 
-\Huge The \textit{srdp-mathematik} package v1.11.0\\[1cm]
+\Huge The \textit{srdp-mathematik} package v1.12.0\\[1cm]
 
 Documentation \\ [1cm]
 
@@ -92,7 +92,7 @@ Die \textit{allgemeinen Befehle} erleichtern das Erstellen von Tests, Schularbei
 
 \subsection{Beispielumgebungen}
 
-Jedes Beispiel sollte innerhalb einer Beispielumgebung gesetzt werden, welche bei der Formatierung und der Verarbeitung der Punkte unterstützt. Dabei werden zwei Beispiel-Typen unterschieden: \texttt{beispiel} und \texttt{langesbeispiel}.   
+Jedes Beispiel sollte innerhalb einer Beispielumgebung gesetzt werden, welche bei der Formatierung und der Verarbeitung der Punkte unterstützt. Als Punkte sind natürliche Zahlen sowie halbe Punkte (z.B.: 3.5) möglich. Dabei werden zwei Beispiel-Typen unterschieden: \texttt{beispiel} und \texttt{langesbeispiel}.   
 
 \vspace{1cm}
 \subsubsection{\texttt{\textbackslash begin\{beispiel\} \ldots\ \textbackslash end\{beispiel\}}}
@@ -300,9 +300,9 @@ Analog zum individuellen Notenschlüssel kann auch das Beurteilungsschema belieb
 
 \newpage
 
-\subsection{Paketoption -- Lösungseingabe: \texttt{[solution\_on/off]}}
+\subsection{Paketoption -- Lösungseingabe: \texttt{[solution\_on/off/minimal]}}
 
-Es besteht die Möglichkeit, die Lösung in der erstellten \texttt{tex}-Datei zu implementieren und diese bei Bedarf in der \texttt{PDF}-Datei ein- bzw. auszublenden. Um diese Funktion nutzen zu können, muss die \texttt{solution\_on/off} Option im \texttt{srdp-mathematik}-Paket geladen werden. Diese kann durch hinzufügen durch "`\texttt{solution\_on}"' bzw. "`\texttt{solution\_off}"' aktiviert bzw. deaktiviert werden. Also:
+Es besteht die Möglichkeit, die Lösung in der erstellten \texttt{tex}-Datei zu implementieren und diese bei Bedarf in der \texttt{PDF}-Datei ein- bzw. auszublenden. Um diese Funktion nutzen zu können, muss die \texttt{solution\_on/off/minimal} Option im \texttt{srdp-mathematik}-Paket geladen werden. Diese kann durch hinzufügen durch "`\texttt{solution\_on}"' bzw. "`\texttt{solution\_off}"' aktiviert bzw. deaktiviert werden. Also:
 
 \begin{verbatim}
 \usepackage[solution_on]{srdp-mathematik}
@@ -314,6 +314,7 @@ oder
 \usepackage[solution_off]{srdp-mathematik}
 \end{verbatim}
 
+Die Option "`\texttt{solution\_minimal}"' zeigt zwar alle Lösungen an, jedoch wird die deutliche Markierung der Lösungsanzeige nicht dargestellt.\leer 
 
 Die korrekte Lösungseingabe der vorformatierten Typ-1-Aufgaben wird bei den entsprechenden Befehlen direkt erklärt. Unabhängig davon, gibt es die Möglichkeit mithilfe des \texttt{antwort}-Befehls, beliebige Abschnitte als \textit{Antwort} zu deklarieren. (verwendeter counter: \texttt{Antworten=0, 1})   
 
