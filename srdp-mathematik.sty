@@ -460,7 +460,7 @@ Erreichte Punkte &Gesamt&\multicolumn{2}{c}{Note}& \\
 
 
 
-\NewDocumentCommand{\punkteverteilung}{ O{} m m m m}{\ifthenelse{\isodd{\thecounterhalfpoints}}{\setcounter{temporarygesamtpunkte}{\numexpr\thepunkte+(\thecounterhalfpoints-1)/2\relax}}{\setcounter{temporarygesamtpunkte}{\numexpr\thepunkte+\thecounterhalfpoints/2\relax}}%
+\NewDocumentCommand{\punkteverteilung}{ O{} m m m m}{\ifthenelse{\isodd{\thecounterhalfpoints}}{
 \null\vfill
 \STautoround{3}\renewcommand{\arraystretch}{0}\tiny
 \begin{spreadtab}[\STsavecell\gutgenau{b2} \STsavecell\befriedigendgenau{c2} \STsavecell\genuegendgenau{d2} \STsavecell\nichtgenuegendgenau{e2} 
@@ -476,19 +476,19 @@ Erreichte Punkte &Gesamt&\multicolumn{2}{c}{Note}& \\
 \begin{center}
 \begin{tabular}{|C{3cm}C{3cm}C{3cm}C{3cm}C{3cm}|}\hline
 \scriptsize{Sehr gut} & \scriptsize{Gut} & \scriptsize{Befriedigend} & \scriptsize{Gen\"ugend} & \scriptsize{Nicht gen\"ugend} \\
-\scriptsize{\ifthenelse{\isodd{\thecounterhalfpoints}}{\thetemporarygesamtpunkte ,5}{\thetemporarygesamtpunkte} ~-~ \ifdim\gut pt=\gutgenau pt \gut\else\gutpluseins\fi}& \scriptsize{\ifdim\gut pt=\gutgenau pt \gutminuseins\else\gut\fi \ifthenelse{\equal{#1}{1/2}}{,5}{} ~-~ \ifdim\befriedigend pt=\befriedigendgenau pt \befriedigend\else\befriedigendpluseins\fi} & \scriptsize{\ifdim\befriedigend pt=\befriedigendgenau pt \befriedigendminuseins\else\befriedigend\fi \ifthenelse{\equal{#1}{1/2}}{,5}{} ~-~ \ifdim\genuegend pt=\genuegendgenau pt \genuegend\else\genuegendpluseins\fi} & \scriptsize{\ifdim\genuegend pt=\genuegendgenau pt \genuegendminuseins\else\genuegend\fi \ifthenelse{\equal{#1}{1/2}}{,5}{} ~-~ \ifdim\nichtgenuegend pt=\nichtgenuegendgenau pt \nichtgenuegend\else\nichtgenuegendpluseins\fi} & \scriptsize{unter \ifdim\nichtgenuegend pt=\nichtgenuegendgenau pt \nichtgenuegend\else\nichtgenuegendpluseins\fi} \\ \hline
+\scriptsize{\thepunkte\ ~-~ \ifdim\gut pt=\gutgenau pt \gut\else\gutpluseins\fi}& \scriptsize{\ifdim\gut pt=\gutgenau pt \gutminuseins\else\gut\fi \ifthenelse{\equal{#1}{1/2}}{,5}{} ~-~ \ifdim\befriedigend pt=\befriedigendgenau pt \befriedigend\else\befriedigendpluseins\fi} & \scriptsize{\ifdim\befriedigend pt=\befriedigendgenau pt \befriedigendminuseins\else\befriedigend\fi \ifthenelse{\equal{#1}{1/2}}{,5}{} ~-~ \ifdim\genuegend pt=\genuegendgenau pt \genuegend\else\genuegendpluseins\fi} & \scriptsize{\ifdim\genuegend pt=\genuegendgenau pt \genuegendminuseins\else\genuegend\fi \ifthenelse{\equal{#1}{1/2}}{,5}{} ~-~ \ifdim\nichtgenuegend pt=\nichtgenuegendgenau pt \nichtgenuegend\else\nichtgenuegendpluseins\fi} & \scriptsize{unter \ifdim\nichtgenuegend pt=\nichtgenuegendgenau pt \nichtgenuegend\else\nichtgenuegendpluseins\fi} \\ \hline
 \end{tabular}
 \end{center}\STautoround{}\normalsize}
 
 
 
-\NewDocumentCommand{\individualpunkteverteilung}{m m m m m m m}{\ifthenelse{\isodd{\thecounterhalfpoints}}{\setcounter{temporarygesamtpunkte}{\numexpr\thepunkte+(\thecounterhalfpoints-1)/2\relax}}{\setcounter{temporarygesamtpunkte}{\numexpr\thepunkte+\thecounterhalfpoints/2\relax}}%
+\NewDocumentCommand{\individualpunkteverteilung}{m m m m m m m}{
 \null\vfill
 \footnotesize\renewcommand{\arraystretch}{1}
 \begin{center}
 \begin{tabular}{|C{3cm}C{3cm}C{3cm}C{3cm}C{3cm}|}\hline
 \scriptsize{Sehr gut} & \scriptsize{Gut} & \scriptsize{Befriedigend} & \scriptsize{Gen\"ugend} & \scriptsize{Nicht gen\"ugend} \\
-\scriptsize{\ifthenelse{\isodd{\thecounterhalfpoints}}{\thetemporarygesamtpunkte ,5}{\thetemporarygesamtpunkte} ~-~ #1}& \scriptsize{#2 ~-~ #3} & \scriptsize{#4 ~-~ #5} & \scriptsize{#6 ~-~ #7} & \scriptsize{unter #7} \\ \hline
+\scriptsize{\thepunkte\ ~-~ #1}& \scriptsize{#2 ~-~ #3} & \scriptsize{#4 ~-~ #5} & \scriptsize{#6 ~-~ #7} & \scriptsize{unter #7} \\ \hline
 \end{tabular}
 \end{center}\normalsize}
 
