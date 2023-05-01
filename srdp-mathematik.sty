@@ -86,6 +86,7 @@
 \newcounter{info}
 \newcounter{marker}
 \DeclareOption{solution_on}{\setcounter{Antworten}{1}}
+\DeclareOption{solution_minimal}{\setcounter{Antworten}{1}}
 \DeclareOption{solution_off}{\setcounter{Antworten}{0}}
 \DeclareOption{info_on}{\setcounter{info}{1}}
 \DeclareOption{info_off}{\setcounter{info}{0}}
@@ -229,15 +230,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcounter{number}
-\newcounter{boolcounter}
 \newcounter{counterhalfpoints}
 \newcommand*\rfrac[2]{{}^{#1}\!/_{#2}}
 
 \makeatletter
-
-% \newcommand{\IsDecimal}[1]{%
-% \IfSubStr{#1}{,}{\setcounter{boolcounter}{0}}{\IfDecimal{#1}{\setcounter{boolcounter}{1}}{\setcounter{boolcounter}{0}}}%
-% }%
 
 \def\addifisinteger#1{%
   \sbox\z@{\@tempcnta=0#1\relax}%
@@ -460,13 +456,13 @@ Erreichte Punkte &Gesamt&\multicolumn{2}{c}{Note}& \\
 
 
 
-\NewDocumentCommand{\punkteverteilung}{ O{} m m m m}{\ifthenelse{\isodd{\thecounterhalfpoints}}{
+\NewDocumentCommand{\punkteverteilung}{ O{} m m m m}{
 \null\vfill
 \STautoround{3}\renewcommand{\arraystretch}{0}\tiny
 \begin{spreadtab}[\STsavecell\gutgenau{b2} \STsavecell\befriedigendgenau{c2} \STsavecell\genuegendgenau{d2} \STsavecell\nichtgenuegendgenau{e2} 
 \STsavecell\gut{b3}  \STsavecell\befriedigend{c3} \STsavecell\genuegend{d3} \STsavecell\nichtgenuegend{e3}  
 \STsavecell\gutpluseins{b4} \STsavecell\befriedigendpluseins{c4}  \STsavecell\genuegendpluseins{d4} \STsavecell\nichtgenuegendpluseins{e4} \STsavecell\gutminuseins{b5} \STsavecell\befriedigendminuseins{c5} \STsavecell\genuegendminuseins{d5} \STsavecell\nichtgenuegendminuseins{e5}]{{tabular}{ccccc}}
-	\SThidecol\thetemporarygesamtpunkte &\SThidecol 1 &\SThidecol2 &\SThidecol 3 &\SThidecol 4 \\ 
+	\SThidecol\thepunkte &\SThidecol 1 &\SThidecol2 &\SThidecol 3 &\SThidecol 4 \\ 
 	& a1*#2 &a1*#3 & a1*#4 & a1*#5 \\
 	&trunc(a1*#2,0) & trunc(a1*#3,0) &trunc(a1*#4,0) &trunc(a1*#5,0) \\
 	&b3+1 &c3+1 &d3+1 & e3+1\\

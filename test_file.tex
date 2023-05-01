@@ -7,7 +7,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[ngerman]{babel}
-\usepackage[solution_on, random=0, info_off]{srdp-mathematik} % solution_on/off, random, info_on/off
+\usepackage[solution_minimal, random=0, info_off]{srdp-mathematik} % solution_on/off, random, info_on/off
 %
 \usepackage{blindtext}
 %
@@ -39,47 +39,19 @@
 
 
 \begin{document}
-%\IsDecimal{3m}
-%\dottocomma{3,4}
-\fpeval{trunc(3,0)}
-%\newcounter{A}    \newcounter{B}
-%\setcounter{A}{55}
-%\punkteAddieren{\theA/10}
-%\theA\ and \punkteDisplay
-
-
-\beurteilung{0.875}{0.75}{0.625}{1/2}{ % Prozentschluessel
-				T1={16.5}, 				% Punkte im Teil 1  
-				T2={8}, 				% Punkte im Teil 2
-				}
 
 \begin{beispiel}{2} %PUNKTE DES BEISPIELS
-test
+test \antwort{lösung}
+\end{beispiel}
+
+\begin{beispiel}{1.5} %PUNKTE DES BEISPIELS
+test 2
 \end{beispiel}
 
 
-\begin{beispiel}{2} %PUNKTE DES BEISPIELS
-test
+\begin{beispiel}{7.5} %PUNKTE DES BEISPIELS
+test 3
 \end{beispiel}
-
-\begin{beispiel}{1} %PUNKTE DES BEISPIELS
-test
-\end{beispiel}
-
-\begin{langesbeispiel} \item[43] %PUNKTE DES BEISPIELS
-\blindtext
-\end{langesbeispiel}
-%\punkteDisplay
-%
-%\punkteAddieren{5}
-%
-%\punkteDisplay
-%\begin{beispiel}{3} %PUNKTE DES BEISPIELS
-%test
-%\end{beispiel}
-%
-
-%\punkteDisplay
 \notenschluessel{0.91}{0.8}{0.64}{0.5}
 
 
