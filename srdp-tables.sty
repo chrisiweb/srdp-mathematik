@@ -1,6 +1,14 @@
 
 \NeedsTeXFormat{LaTeX2e}[2005/12/01]
 \ProvidesPackage{srdp-tables}[2021/11/09]
+% Ensure a safe fallback for \tabu@cleanup early so that
+% uses of \aftergroup\tabu@cleanup never see an undefined macro.
+% The full implementation of \tabu@cleanup appears later in this file
+% and will overwrite this placeholder. This avoids runtime "Undefined
+% control sequence" errors when code sets \aftergroup\tabu@cleanup
+% before the detailed definition has been read.
+\def\tabu@cleanup{\relax} % placeholder, overwritten later
+% End of early safeguard.
 \AtEndOfPackage{\tabu@AtEnd \let\tabu@AtEnd \@undefined}
 \let\tabu@AtEnd\@empty
 \def\TMP@EnsureCode#1={%
