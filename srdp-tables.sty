@@ -1,14 +1,7 @@
 
 \NeedsTeXFormat{LaTeX2e}[2005/12/01]
 \ProvidesPackage{srdp-tables}[2021/11/09]
-% Ensure a safe fallback for \tabu@cleanup early so that
-% uses of \aftergroup\tabu@cleanup never see an undefined macro.
-% The full implementation of \tabu@cleanup appears later in this file
-% and will overwrite this placeholder. This avoids runtime "Undefined
-% control sequence" errors when code sets \aftergroup\tabu@cleanup
-% before the detailed definition has been read.
-\def\tabu@cleanup{\relax} % placeholder, overwritten later
-% End of early safeguard.
+
 \AtEndOfPackage{\tabu@AtEnd \let\tabu@AtEnd \@undefined}
 \let\tabu@AtEnd\@empty
 \def\TMP@EnsureCode#1={%
@@ -266,7 +259,7 @@
         \global\advance\c@taburow \@ne}%
     \iftabu@everyrow \toks@\expandafter
         {\expandafter\def\expandafter\tabu@evr@L\expandafter{\the\toks@}\ignorespaces}%
-    \else \xdef\tabu@evr@G{\the\toks@}%
+    \else \global\xdef\tabu@evr@G{\the\toks@}%
     \fi
     \tabu@everyrow@egroup
 }% \tabu@everyr@w
@@ -699,12 +692,12 @@
     \let\tabu@@rowfontreset@save\tabu@@rowfontreset
     \let\tabu@rowfontreset      \@empty
     \edef\tabu@alloc@save      {\the\tabu@alloc}%   restore at \tabu@reset
-    \edef\c@taburow@save       {\the\c@taburow}%
-    \edef\tabu@naturalX@save   {\the\tabu@naturalX}%
-    \let\tabu@naturalXmin@save  \tabu@naturalXmin
-    \let\tabu@naturalXmax@save  \tabu@naturalXmax
-    \let\tabu@mkarstrut@save    \tabu@mkarstrut
-    \edef\tabu@clarstrut{%
+    \xdef\c@taburow@save {\the\c@taburow}
+    \xdef\tabu@naturalX@save {\the\tabu@naturalX}
+    \global\let\tabu@naturalXmin@save\tabu@naturalXmin
+    \global\let\tabu@naturalXmax@save\tabu@naturalXmax
+    \global\let\tabu@mkarstrut@save\tabu@mkarstrut
+    \xdef\tabu@clarstrut{%
         \extrarowheight \the\dimexpr \ht\@arstrutbox-\ht\strutbox \relax
         \extrarowdepth \the\dimexpr \dp\@arstrutbox-\dp\strutbox \relax
         \let\noexpand\@arraystretch \@ne \noexpand\tabu@rearstrut}%
@@ -743,7 +736,11 @@
         \tabu@afterendpar   \tabu@elapsedtime
     \fi
     \tabu@clarstrut
-    \everyrow\expandafter   {\tabu@evr@G}%
+    \ifdefined\tabu@evr@G
+    \else
+        \let\tabu@evr@G\@empty
+    \fi
+    \everyrow\expandafter{\tabu@evr@G}
 }% \tabu@cleanup
 \let\tabu@afterendpar \relax
 \def\tabu@setreset {%
