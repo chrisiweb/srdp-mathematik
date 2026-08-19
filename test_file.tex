@@ -6,8 +6,11 @@
 \usepackage{lmodern}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage[solution_minimal, random=1, info_off]{srdp-mathematik} % solution_on/off, random, info_on/off
+\usepackage[solution_on, random=0, info_off]{srdp-mathematik} % solution_on/off, random, info_on/off
 %
+
+
+
 \usepackage{blindtext}
 
 %
@@ -21,34 +24,150 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 
-\tracingonline=1
-\errorcontextlines=999
+%\tracingonline=1
+%\errorcontextlines=999
 
 \begin{document}
 
-\begin{beispiel}{2} %PUNKTE DES BEISPIELS
-Test
 
-\multiplechoice[5]{  %Anzahl der Antwortmoeglichkeiten, Standard: 5
-				L1={a},   %1. Antwortmoeglichkeit 
-				L2={B},   %2. Antwortmoeglichkeit
-				L3={C},   %3. Antwortmoeglichkeit
-				L4={d},   %4. Antwortmoeglichkeit
-				L5={e},	 %5. Antwortmoeglichkeit
-				L6={},	 %6. Antwortmoeglichkeit
+\tfmultiplechoice[5]{Aussage}{  %Anzahl der Antwortmoeglichkeiten, Standard: 5
+				L1={TEST},   %1. Antwortmoeglichkeit 
+				L2={TEST},   %2. Antwortmoeglichkeit
+				L3={\blindtext},   %3. Antwortmoeglichkeit
+				L4={\begin{tabular}{c|c|c|c|c|c|c|c}
+				$x$&-2&-1&0&1&2&3&4\\ \hline
+				$f(x)$&-15&-2,5&1&-1,5&-7&-12,5&-15
+				\end{tabular}},   %4. Antwortmoeglichkeit
+				L5={\begin{tabular}{c|c|c|c|c|c|c|c}
+				$x$&-2&-1&0&1&2&3&4\\ \hline
+				$f(x)$&-15&2,5&1&-1,5&-7&-12,5&-15
+				\end{tabular}},	 %5. Antwortmoeglichkeit
+				L6={\begin{tabular}{c|c|c|c|c|c|c|c}
+				$x$&-2&-1&0&1&2&3&4\\ \hline
+				$f(x)$&-15&-2,5&1&-1,5&-9&-12,5&-15
+				\end{tabular}},	 %6. Antwortmoeglichkeit
 				L7={},	 %7. Antwortmoeglichkeit
 				L8={},	 %8. Antwortmoeglichkeit
 				L9={},	 %9. Antwortmoeglichkeit
-				%% LOESUNG: %%
-				A1=0,  % 1. Antwort
+				% LOESUNG: %%
+				A1=4,  % 1. Antwort
+				A2=0,	 % 2. Antwort
+				A3=0,  % 3. Antwort
+				A4=0,  % 4. Antwort
+				A5=0,  % 5. Antwort
+				}
+	
+	\tfmultiplechoice[5]{Statement}{  %Anzahl der Antwortmoeglichkeiten, Standard: 5
+						L1={•},   %1. Antwortmoeglichkeit 
+						L2={•},   %2. Antwortmoeglichkeit
+						L3={•},   %3. Antwortmoeglichkeit
+						L4={•},   %4. Antwortmoeglichkeit
+						L5={•},	 %5. Antwortmoeglichkeit
+						L6={},	 %6. Antwortmoeglichkeit
+						L7={},	 %7. Antwortmoeglichkeit
+						L8={},	 %8. Antwortmoeglichkeit
+						L9={},	 %9. Antwortmoeglichkeit
+						%% LOESUNG: %%
+						A1=0,  % 1. Antwort
+						A2=0,	 % 2. Antwort
+						A3=0,  % 3. Antwort
+						A4=0,  % 4. Antwort
+						A5=0,  % 5. Antwort
+						}
+
+\multiplechoice[6]{  %Anzahl der Antwortmoeglichkeiten, Standard: 5
+				L1={TEST},   %1. Antwortmoeglichkeit 
+				L2={TEST},   %2. Antwortmoeglichkeit
+				L3={\blindtext},   %3. Antwortmoeglichkeit
+				L4={\begin{tabular}{c|c|c|c|c|c|c|c}
+				$x$&-2&-1&0&1&2&3&4\\ \hline
+				$f(x)$&-15&-2,5&1&-1,5&-7&-12,5&-15
+				\end{tabular}},   %4. Antwortmoeglichkeit
+				L5={\begin{tabular}{c|c|c|c|c|c|c|c}
+				$x$&-2&-1&0&1&2&3&4\\ \hline
+				$f(x)$&-15&2,5&1&-1,5&-7&-12,5&-15
+				\end{tabular}},	 %5. Antwortmoeglichkeit
+				L6={\begin{tabular}{c|c|c|c|c|c|c|c}
+				$x$&-2&-1&0&1&2&3&4\\ \hline
+				$f(x)$&-15&-2,5&1&-1,5&-9&-12,5&-15
+				\end{tabular}},	 %6. Antwortmoeglichkeit
+				L7={},	 %7. Antwortmoeglichkeit
+				L8={},	 %8. Antwortmoeglichkeit
+				L9={},	 %9. Antwortmoeglichkeit
+				% LOESUNG: %%
+				A1=4,  % 1. Antwort
 				A2=0,	 % 2. Antwort
 				A3=0,  % 3. Antwort
 				A4=0,  % 4. Antwort
 				A5=0,  % 5. Antwort
 				}
 
-\end{beispiel}
+\multiplechoice[5]{  %Anzahl der Antwortmoeglichkeiten, Standard: 5
+				L1={$g:X=\Vek{5}{6}{}+t\cdot \Vek{-2}{3}{}$},   %1. Antwortmoeglichkeit 
+				L2={$g:X=\Vek{-12}{3}{}+t\cdot \Vek{3}{2}{}$},   %2. Antwortmoeglichkeit
+				L3={$g:X=\Vek{-6}{5}{}+t\cdot \Vek{-8}{12}{}$},   %3. Antwortmoeglichkeit
+				L4={$g:X=\Vek{5}{6}{}+t\cdot \Vek{-6}{-4}{}$},   %4. Antwortmoeglichkeit
+				L5={\blindtext},	 %5. Antwortmoeglichkeit
+				L6={},	 %6. Antwortmoeglichkeit
+				L7={},	 %7. Antwortmoeglichkeit
+				L8={},	 %8. Antwortmoeglichkeit
+				L9={},	 %9. Antwortmoeglichkeit
+				%% LOESUNG: %%
+				A1=2,  % 1. Antwort
+				A2=4,	 % 2. Antwort
+				A3=0,  % 3. Antwort
+				A4=0,  % 4. Antwort
+				A5=0,  % 5. Antwort
+				}
+				
+\langmultiplechoice[5]{  %Anzahl der Antwortmoeglichkeiten, Standard: 5
+				L1={\resizebox{0.95\linewidth}{!}{\psset{xunit=1cm,yunit=1cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=5pt 0,linewidth=0.8pt,arrowsize=3pt 2,arrowinset=0.25}
+\begin{pspicture*}(-1.,-2)(7.,2)
+\psaxes[labelFontSize=\scriptstyle,xAxis=true,yAxis=true,labels=none,Dx=1.,Dy=1.,ticksize=0pt 0,subticks=2]{->}(0,0)(-1.,-2)(7.,2)[x,140] [y,-40]
+\rput{-90.}(0.,0.){\psplot[linewidth=1.8pt]{-3.}{3.}{x^2/2/0.25}}
+\end{pspicture*}}},   %1. Antwortmoeglichkeit 
+				L2={\resizebox{0.8\linewidth}{!}{\psset{xunit=1.0cm,yunit=1.0cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=5pt 0,linewidth=0.8pt,arrowsize=3pt 2,arrowinset=0.25}
+\begin{pspicture*}(-1.,-0.5)(7.,3.5)
+\psaxes[labelFontSize=\scriptstyle,xAxis=true,yAxis=true,labels=none,Dx=1.,Dy=1.,ticksize=0pt 0,subticks=2]{->}(0,0)(-1.,-0.5)(7.,3.5)[x,140] [y,-40]
+\psplot[linewidth=1.8pt,plotpoints=200]{0}{6.976535890097912}{sqrt(1.5*x)}
+\end{pspicture*}}},   %2. Antwortmoeglichkeit
+				L3={\resizebox{0.8\linewidth}{!}{\psset{xunit=1.0cm,yunit=1.0cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=5pt 0,linewidth=0.8pt,arrowsize=3pt 2,arrowinset=0.25}
+\begin{pspicture*}(-4.,-0.5)(4.,3.5)
+\psaxes[labelFontSize=\scriptstyle,xAxis=true,yAxis=true,labels=none,Dx=1.,Dy=1.,ticksize=0pt 0,subticks=2]{->}(0,0)(-4.,-0.5)(4.,3.5)[x,140] [y,-40]
+\psplot[linewidth=1.8pt,plotpoints=200]{-4}{4}{1.5}
+\end{pspicture*}}},   %3. Antwortmoeglichkeit
+				L4={\resizebox{0.8\linewidth}{!}{\psset{xunit=1.0cm,yunit=1.0cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=5pt 0,linewidth=0.8pt,arrowsize=3pt 2,arrowinset=0.25}
+\begin{pspicture*}(-2.,-1.5)(6.,3.5)
+\psaxes[labelFontSize=\scriptstyle,xAxis=true,yAxis=true,labels=none,Dx=1.,Dy=1.,ticksize=0pt 0,subticks=2]{->}(0,0)(-2.,-1.5)(6.,3.5)[x,140] [y,-40]
+\psplot[linewidth=1.8pt,plotpoints=200]{-8.194738312149973}{16.449543137450025}{-0.041630190721747305*x^(4.0)+0.18260210104734048*x^(3.0)+0.11940176672105315*x^(2.0)+0.041712480429634956*x}
+\end{pspicture*}}},   %4. Antwortmoeglichkeit
+				L5={\resizebox{0.8\linewidth}{!}{\psset{xunit=1.0cm,yunit=1.0cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=5pt 0,linewidth=0.8pt,arrowsize=3pt 2,arrowinset=0.25}
+\begin{pspicture*}(-3.,-2)(5.,2)
+\psaxes[labelFontSize=\scriptstyle,xAxis=true,yAxis=true,labels=none,Dx=1.,Dy=1.,ticksize=0pt 0,subticks=2]{->}(0,0)(-3.,-2)(5.,2)[x,140] [y,-40]
+\psline[linewidth=1.8pt](-1.5,-7.2013005262224254)(-1.5,5.366704508814184)
+\end{pspicture*}}},	 %5. Antwortmoeglichkeit
+				L6={},	 %6. Antwortmoeglichkeit
+				L7={},	 %7. Antwortmoeglichkeit
+				L8={},	 %8. Antwortmoeglichkeit
+				L9={},	 %9. Antwortmoeglichkeit
+				%% LOESUNG: %%
+				A1=1,  % 1. Antwort
+				A2=5,	 % 2. Antwort
+				A3=0,  % 3. Antwort
+				A4=0,  % 4. Antwort
+				A5=0,  % 5. Antwort
+				}
+%
+%\begin{tabularx}{\textwidth}{|c|c|}
+%$23,7\cdot 10^{-3}$ & test \\
+%Die momentane Änderungsrate von $f$ ist für alle $x\in\left[2;4\right]$ kleiner als die Steigung der Sekante von $f$ in $\left[2;10\right]$. & B \\
+%\psset{xunit=0.7cm,yunit=0.7cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=5pt 0,linewidth=0.8pt,arrowsize=3pt 2,arrowinset=0.25}
+%\begin{pspicture*}(-3.34,-3.9)(3.9,3.64)
+%\psaxes[labelFontSize=\scriptstyle,xAxis=true,yAxis=true,Dx=1.,Dy=1.,showorigin=false,ticksize=-2pt 0,subticks=0]{->}(0,0)(-3.34,-3.9)(3.9,3.64)[\scriptsize{$x$},140] [\scriptsize{$y$},-40]
+%\pscircle[linewidth=2.pt](0.,0.){1.4}
+%\begin{scriptsize}
+%\rput[bl](-1.28,1.){$f_4$}
+%\end{scriptsize}
+%\end{pspicture*} & \\
+%\end{tabularx}
 \end{document}
-
-
-% Aufgabenliste: 4, 10

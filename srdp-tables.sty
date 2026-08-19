@@ -1,7 +1,6 @@
 
 \NeedsTeXFormat{LaTeX2e}[2005/12/01]
 \ProvidesPackage{srdp-tables}[2021/11/09]
-
 \AtEndOfPackage{\tabu@AtEnd \let\tabu@AtEnd \@undefined}
 \let\tabu@AtEnd\@empty
 \def\TMP@EnsureCode#1={%
@@ -259,7 +258,7 @@
         \global\advance\c@taburow \@ne}%
     \iftabu@everyrow \toks@\expandafter
         {\expandafter\def\expandafter\tabu@evr@L\expandafter{\the\toks@}\ignorespaces}%
-    \else \global\xdef\tabu@evr@G{\the\toks@}%
+    \else \xdef\tabu@evr@G{\the\toks@}%
     \fi
     \tabu@everyrow@egroup
 }% \tabu@everyr@w
@@ -692,12 +691,12 @@
     \let\tabu@@rowfontreset@save\tabu@@rowfontreset
     \let\tabu@rowfontreset      \@empty
     \edef\tabu@alloc@save      {\the\tabu@alloc}%   restore at \tabu@reset
-    \xdef\c@taburow@save {\the\c@taburow}
-    \xdef\tabu@naturalX@save {\the\tabu@naturalX}
-    \global\let\tabu@naturalXmin@save\tabu@naturalXmin
-    \global\let\tabu@naturalXmax@save\tabu@naturalXmax
-    \global\let\tabu@mkarstrut@save\tabu@mkarstrut
-    \xdef\tabu@clarstrut{%
+    \edef\c@taburow@save       {\the\c@taburow}%
+    \edef\tabu@naturalX@save   {\the\tabu@naturalX}%
+    \let\tabu@naturalXmin@save  \tabu@naturalXmin
+    \let\tabu@naturalXmax@save  \tabu@naturalXmax
+    \let\tabu@mkarstrut@save    \tabu@mkarstrut
+    \edef\tabu@clarstrut{%
         \extrarowheight \the\dimexpr \ht\@arstrutbox-\ht\strutbox \relax
         \extrarowdepth \the\dimexpr \dp\@arstrutbox-\dp\strutbox \relax
         \let\noexpand\@arraystretch \@ne \noexpand\tabu@rearstrut}%
@@ -736,11 +735,7 @@
         \tabu@afterendpar   \tabu@elapsedtime
     \fi
     \tabu@clarstrut
-    \ifdefined\tabu@evr@G
-    \else
-        \let\tabu@evr@G\@empty
-    \fi
-    \everyrow\expandafter{\tabu@evr@G}
+    \everyrow\expandafter   {\tabu@evr@G}%
 }% \tabu@cleanup
 \let\tabu@afterendpar \relax
 \def\tabu@setreset {%
@@ -1661,7 +1656,7 @@
     \hrule height\@tempdima depth\@tempdimb width\hsize
 %%    \box\tabu@box
 }% \tabu@verticalsp@pmb
-
+\let\tabu@verticalspacing\tabu@verticalsp@lcr
 \def\tabu@verticalinit{%
     \ifnum \c@taburow=\z@ \tabu@rearstrut \fi       % after \tabu@reset !
     \advance\c@taburow \@ne
