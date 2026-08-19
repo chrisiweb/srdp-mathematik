@@ -57,7 +57,8 @@
 
 \setlength{\headheight}{0.4pt}
 \setlength\parindent{0pt}
-\newcolumntype{M}{>{\begin{varwidth}{0.8\textwidth}}l<{\end{varwidth}}}
+% \newcolumntype{M}{>{\begin{varwidth}{0.8\textwidth}}l<{\end{varwidth}}}
+\newcolumntype{M}{m{0.8\linewidth}}
 % \newcolumntype{A}{>{\begin{varwidth}{0.73\linewidth}}l<{\end{varwidth}}}
 \newcolumntype{A}{m{0.73\linewidth}}
 \newcolumntype{N}{>{\begin{varwidth}{0.59\textwidth}}l<{\end{varwidth}}}
@@ -72,6 +73,7 @@
 
 \newcommand{\MCBox}{\raisebox{1mm}{\Square}}
 \newcommand{\MCBoxchecked}{\raisebox{1mm}{\XBox}}
+\newcommand{\MCText}[1]{\raisebox{1mm}{#1}}
 
 %
 %
@@ -711,27 +713,37 @@ a1+(\shift) & (0.9-a2) \\
 	\vspace{0.2cm}
 \begin{minipage}[t][][t]{\links\textwidth}  \vspace{0pt} 
 \flushright 
-	\tabulinesep=3mm
-	\begin{tabu}{|>{\vphantom{\"Ag}}M|C{1cm}|p{0.001pt}}\hhline{--}
-	\jeroen@get{R\theantworta}&\cellcolor[gray]{0.9}\antwort{\jeroen@get{A\theantworta}}&\\ \hhline{--}
-	\ifnum\choices<2 \else\jeroen@get{R\theantwortb}&\cellcolor[gray]{0.9}\antwort{\jeroen@get{A\theantwortb}}&\\ \hhline{--}\fi
-	\ifnum\choices<3 \else\jeroen@get{R\theantwortc}&\cellcolor[gray]{0.9}\antwort{\jeroen@get{A\theantwortc}}&\\ \hhline{--}\fi
-	\ifnum\choices<4 \else\jeroen@get{R\theantwortd}&\cellcolor[gray]{0.9}\antwort{\jeroen@get{A\theantwortd}}&\\ \hhline{--}\fi
-	\end{tabu}
+	\begin{tabular}{|>{\vspace{2mm}\vphantom{\"Ag}}M|C{1cm}|p{0.001pt}}\hhline{--}
+	\jeroen@get{R\theantworta}\vspace{2mm}
+	&\cellcolor[gray]{0.9}\MCText{\antwort{\jeroen@get{A\theantworta}}}
+	&\\ \hhline{--}
+	\ifnum\choices<2 \else \jeroen@get{R\theantwortb}\vspace{2mm}
+	&\cellcolor[gray]{0.9}\MCText{\antwort{\jeroen@get{A\theantwortb}}}
+	&\\ \hhline{--}\fi
+	\ifnum\choices<3 \else\jeroen@get{R\theantwortc}\vspace{2mm}
+	&\cellcolor[gray]{0.9}\MCText{\antwort{\jeroen@get{A\theantwortc}}}&\\ \hhline{--}\fi
+	\ifnum\choices<4 \else\jeroen@get{R\theantwortd}\vspace{2mm}
+	&\cellcolor[gray]{0.9}\MCText{\antwort{\jeroen@get{A\theantwortd}}}&\\ \hhline{--}\fi
+	\end{tabular}
 	\end{minipage}
 	\hfill
 	\begin{minipage}[t][][t]{\rechts\textwidth} \vspace{0pt}
 	\flushleft 
-	\tabulinesep=3mm
-	\begin{tabu}{|C{1cm}|>{\vphantom{\"Ag}} M|p{0.01pt}} \hhline{--} 
-	\cellcolor[gray]{0.92}A& \jeroen@get{A}&\\ \hhline{--}
-	\cellcolor[gray]{0.92}B& \jeroen@get{B}&\\ \hhline{--}
-	\cellcolor[gray]{0.92}C& \jeroen@get{C}&\\ \hhline{--}
-	\ifnum\choices<2 \else\cellcolor[gray]{0.92}D& \jeroen@get{D}&\\ \hhline{--}\fi
-	\ifnum\choices<3 \else\cellcolor[gray]{0.92}E& \jeroen@get{E}&\\ \hhline{--}\fi
-	\ifnum\choices<4 \else\cellcolor[gray]{0.92}F& \jeroen@get{F}&\\ \hhline{--}\fi
+	\begin{tabular}{|C{1cm}|>{\vspace{2mm}\vphantom{\"Ag}} M|p{0.01pt}} \hhline{--} 
+	\cellcolor[gray]{0.92}\MCText{A}&\jeroen@get{A}\vspace{2mm}
+	&\\ \hhline{--}
+	\cellcolor[gray]{0.92}\MCText{B}&\jeroen@get{B}\vspace{2mm}
+	&\\ \hhline{--}
+	\cellcolor[gray]{0.92}\MCText{C}&\jeroen@get{C}\vspace{2mm}
+	&\\ \hhline{--}
+	\ifnum\choices<2 \else\cellcolor[gray]{0.92}\MCText{D}& \jeroen@get{D}\vspace{2mm}
+	&\\ \hhline{--}\fi
+	\ifnum\choices<3 \else\cellcolor[gray]{0.92}\MCText{E}& \jeroen@get{E}\vspace{2mm}
+	&\\ \hhline{--}\fi
+	\ifnum\choices<4 \else\cellcolor[gray]{0.92}\MCText{F}& \jeroen@get{F}\vspace{2mm}
+	&\\ \hhline{--}\fi
 	\multicolumn{1}{c}{~}&\multicolumn{1}{c}{\parbox{10pt}{~}}&\\
-	\end{tabu}
+	\end{tabular}
 	\end{minipage}
 	\end{minipage}
 	\egroup
@@ -930,7 +942,7 @@ Complete the following sentence by putting a cross next to one of the given poss
 \forloop{ct}{1}{\value{ct}<3}
 {\vspace{2mm}
 \ifthenelse{\value{ct}=\theantworta}{\jeroen@get{L1}}{\ifthenelse{\value{ct}=\theantwortb}{\jeroen@get{L2}}{\ifthenelse{\value{ct}=\theantwortc}{\jeroen@get{L3}}{\ifthenelse{\value{ct}=\theantwortd}{\jeroen@get{L4}}{\ifthenelse{\value{ct}=\theantworte}{\jeroen@get{L5}}{\ifthenelse{\value{ct}=\theantwortf}{\jeroen@get{L6}}{\ifthenelse{\value{ct}=\theantwortg}{\jeroen@get{L7}}{\ifthenelse{\value{ct}=\theantworth}{\jeroen@get{L8}}{{\jeroen@get{L9}}}}}}}}}}\vspace{2mm}
-&
+&%
 \ifnum\theAntworten=1
 \ifthenelse{\jeroen@get{A1}=1 \OR \jeroen@get{A2}=1 \OR \jeroen@get{A3}=1\OR \jeroen@get{A4}=1 \OR \jeroen@get{A5}=1 \OR \jeroen@get{A6}=1 \OR \jeroen@get{A7}=1 \OR \jeroen@get{A8}=1 \OR \jeroen@get{A9}=1 \AND \value{ct}=\theantworta}{\color[rgb]{1,0,0}\MCBoxchecked\color[rgb]{0,0,0}}{}\ifthenelse{\jeroen@get{A1}=2 \OR \jeroen@get{A2}=2 \OR \jeroen@get{A3}=2\OR \jeroen@get{A4}=2\OR \jeroen@get{A5}=2\OR \jeroen@get{A6}=2 \OR \jeroen@get{A7}=2 \OR \jeroen@get{A8}=2 \OR \jeroen@get{A9}=2 \AND \value{ct}=\theantwortb}{\color[rgb]{1,0,0}\MCBoxchecked\color[rgb]{0,0,0}}{}\ifthenelse{\jeroen@get{A1}=3 \OR \jeroen@get{A2}=3 \OR \jeroen@get{A3}=3\OR \jeroen@get{A4}=3\OR \jeroen@get{A5}=3 \OR \jeroen@get{A6}=3 \OR \jeroen@get{A7}=3 \OR \jeroen@get{A8}=3 \OR \jeroen@get{A9}=3 \AND \value{ct}=\theantwortc}{\color[rgb]{1,0,0}\MCBoxchecked\color[rgb]{0,0,0}}{}\ifthenelse{\jeroen@get{A1}=4 \OR \jeroen@get{A2}=4 \OR \jeroen@get{A3}=4\OR \jeroen@get{A4}=4\OR \jeroen@get{A5}=4\OR \jeroen@get{A6}=4 \OR \jeroen@get{A7}=4 \OR \jeroen@get{A8}=4 \OR \jeroen@get{A9}=4 \AND \value{ct}=\theantwortd}{\color[rgb]{1,0,0}\MCBoxchecked\color[rgb]{0,0,0}}{}\ifthenelse{\jeroen@get{A1}=5 \OR \jeroen@get{A2}=5 \OR \jeroen@get{A3}=5\OR \jeroen@get{A4}=5\OR \jeroen@get{A5}=5\OR \jeroen@get{A6}=5 \OR \jeroen@get{A7}=5 \OR \jeroen@get{A8}=5 \OR \jeroen@get{A9}=5 \AND \value{ct}=\theantworte}{\color[rgb]{1,0,0}\MCBoxchecked\color[rgb]{0,0,0}}{}\ifthenelse{\jeroen@get{A1}=6 \OR \jeroen@get{A2}=6 \OR \jeroen@get{A3}=6\OR \jeroen@get{A4}=6\OR \jeroen@get{A5}=6\OR \jeroen@get{A6}=6 \OR \jeroen@get{A7}=6 \OR \jeroen@get{A8}=6 \OR \jeroen@get{A9}=6 \AND \value{ct}=\theantwortf}{\color[rgb]{1,0,0}\MCBoxchecked\color[rgb]{0,0,0}}{}\ifthenelse{\jeroen@get{A1}=7 \OR \jeroen@get{A2}=7 \OR \jeroen@get{A3}=7\OR \jeroen@get{A4}=7\OR \jeroen@get{A5}=7\OR \jeroen@get{A6}=7 \OR \jeroen@get{A7}=7 \OR \jeroen@get{A8}=7 \OR \jeroen@get{A9}=7 \AND \value{ct}=\theantwortg}{\color[rgb]{1,0,0}\MCBoxchecked\color[rgb]{0,0,0}}{}\ifthenelse{\jeroen@get{A1}=8 \OR \jeroen@get{A2}=8 \OR \jeroen@get{A3}=8\OR \jeroen@get{A4}=8\OR \jeroen@get{A5}=8\OR \jeroen@get{A6}=8 \OR \jeroen@get{A7}=8 \OR \jeroen@get{A8}=8 \OR \jeroen@get{A9}=8 \AND \value{ct}=\theantworth}{\color[rgb]{1,0,0}\MCBoxchecked\color[rgb]{0,0,0}}{}\ifthenelse{\jeroen@get{A1}=9 \OR \jeroen@get{A2}=9 \OR \jeroen@get{A3}=9\OR \jeroen@get{A4}=9\OR \jeroen@get{A5}=9\OR \jeroen@get{A6}=9 \OR \jeroen@get{A7}=9 \OR \jeroen@get{A8}=9 \OR \jeroen@get{A9}=9 \AND \value{ct}=\theantworti}{\color[rgb]{1,0,0}\MCBoxchecked\color[rgb]{0,0,0}}{}
 \else
