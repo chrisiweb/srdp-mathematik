@@ -677,7 +677,7 @@
     \let\tabu@ls@G              \tabu@ls@L    % <init>
     \let\tabu@rc@Gsave          \tabu@rc@G
     \let\tabu@rc@G              \tabu@rc@L    % <init>
-    \let\tabu@evr@Gsave         \tabu@evr@G
+    \global\let\tabu@evr@Gsave\tabu@evr@G
     \let\tabu@evr@G             \tabu@evr@L   % <init>
     \let\tabu@celllalign@save   \tabu@celllalign
     \let\tabu@cellralign@save   \tabu@cellralign
@@ -691,15 +691,20 @@
     \let\tabu@@rowfontreset@save\tabu@@rowfontreset
     \let\tabu@rowfontreset      \@empty
     \edef\tabu@alloc@save      {\the\tabu@alloc}%   restore at \tabu@reset
-    \edef\c@taburow@save       {\the\c@taburow}%
-    \edef\tabu@naturalX@save   {\the\tabu@naturalX}%
-    \let\tabu@naturalXmin@save  \tabu@naturalXmin
-    \let\tabu@naturalXmax@save  \tabu@naturalXmax
+    \xdef\c@taburow@save{\the\c@taburow}
+    \xdef\tabu@naturalX@save{\the\tabu@naturalX}
+
+    \global\let\tabu@naturalXmin@save\tabu@naturalXmin
+    \global\let\tabu@naturalXmax@save\tabu@naturalXmax
+
+    % \global\let\tabu@evr@Gsave\tabu@evr@G
     \let\tabu@mkarstrut@save    \tabu@mkarstrut
-    \edef\tabu@clarstrut{%
+    \xdef\tabu@clarstrut{%
         \extrarowheight \the\dimexpr \ht\@arstrutbox-\ht\strutbox \relax
         \extrarowdepth \the\dimexpr \dp\@arstrutbox-\dp\strutbox \relax
-        \let\noexpand\@arraystretch \@ne \noexpand\tabu@rearstrut}%
+        \let\noexpand\@arraystretch \@ne
+        \noexpand\tabu@rearstrut
+        }%
 }% \tabu@setcleanup
 \def\tabu@cleanup {\begingroup
     \globaldefs\@ne         \tabu@everyrowtrue
@@ -712,7 +717,7 @@
     \let\tabu@rc@G          \tabu@rc@Gsave
     \let\tabu@rc@           \tabu@rc@G
     \let\CT@do@color        \relax
-    \let\tabu@evr@G         \tabu@evr@Gsave
+    \let\tabu@evr@G         \@empty
     \let\tabu@celllalign    \tabu@celllalign@save
     \let\tabu@cellralign    \tabu@cellralign@save
     \let\tabu@cellleft      \tabu@cellleft@save
@@ -735,7 +740,8 @@
         \tabu@afterendpar   \tabu@elapsedtime
     \fi
     \tabu@clarstrut
-    \everyrow\expandafter   {\tabu@evr@G}%
+    \everyrow{}
+    %\everyrow\expandafter   {\tabu@evr@G}%
 }% \tabu@cleanup
 \let\tabu@afterendpar \relax
 \def\tabu@setreset {%
